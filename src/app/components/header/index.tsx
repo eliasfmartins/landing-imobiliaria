@@ -5,10 +5,11 @@ export const Header = () => {
                 Logo Here
                 <nav>
                     <ul className="flex gap-4">
-                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Opcao1</li>
-                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Opcao1</li>
-                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Opcao1</li>
-                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Opcao1</li>
+                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Home</li>
+                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Venda</li>
+                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Locação</li>
+                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Quem Somos</li>
+                        <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Fale Conosco</li>
 
 
                     </ul>
