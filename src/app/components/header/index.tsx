@@ -1,8 +1,10 @@
+import Image from "next/image"
+
 export const Header = () => {
     return (
         <header className="bg-zinc-100">
-            <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center text-gray-500">
-                Logo Here
+            <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center text-gray-500 max-h-20" >
+                <Image src={'/pao.svg'} height={120} width={120} alt="" className="object-cover" />
                 <nav>
                     <ul className="flex gap-4">
                         <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">Home</li>
