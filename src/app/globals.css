@@ -1,18 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.redinho {
-  background: red;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  /* Ajuste a altura conforme necessário */
-
-  background-size: cover;
-  background-position: center;
-
-}
