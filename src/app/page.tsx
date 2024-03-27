@@ -35,9 +35,9 @@ export default function Home() {
           <div className="w-[300px] bg-orange-400 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
       </div>
-      <div className="min-h-[35vh] flex max-w-[1200px] mx-auto">
-        <div className="flex flex-col space-y-10  bg-slate-700 items-center mt-7  h-[300px] p-4">
-          <h2 className="w-96 text-3xl">
+      <div className="min-h-[35vh] xl:flex max-w-[1200px] mx-auto mt-20">
+        <div className="flex flex-col space-y-10  mt-7  p-4  h-fit xl:items-start items-center">
+          <h2 className={`${playfair.className} w-96 text-3xl font-[700]`}>
             Um Lançamento Com Excelência E Qualidade
           </h2>
           <p className="font-extralight text-md">
@@ -45,15 +45,14 @@ export default function Home() {
           </p>
           <Link
             href=""
-            className="border-4 border-cyan-600 border-solid w-40 px-4 py-2 text-center rounded-sm hover:bg-cyan-900 hover:border-cyan-900 hover:text-white font-medium transition duration-300 delay-300 hover:delay-300"
+            className="border-2 border-orange-200 w-fit px-8 py-3 font-[700] text-orange-200 hover:bg-orange-300 hover:text-white transition-all ease-in-out  rounded"
           >
             Plantas
           </Link>
         </div>
         <img
-
-          src={"/Section.jpg"}
-          className=" mt-[-185px] z-10 bg-transparent flex flex-1"
+          src={"/temp.png"}
+          className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
     </main>
