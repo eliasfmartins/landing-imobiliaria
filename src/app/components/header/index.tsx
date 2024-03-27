@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -13,8 +14,10 @@ export const Header = () => {
           alt=""
           className="object-cover"
         />
-        <nav className="lg">
-          <ul className="flex gap-4">
+        <nav
+         
+        >
+          <ul  className={` items-center justify-center hidden bg-red-500 h-full ${navbar ? "h-screen block bg-purple-600 flex-col m-auto" : ""}sm:flex `}>
             <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
               Home
             </li>
@@ -31,6 +34,12 @@ export const Header = () => {
               Fale Conosco
             </li>
           </ul>
+          <button
+            className="sm:hidden bg-red-600"
+            onClick={() => setNavBar((e) => !e)}
+          >
+            {navbar ? "x" : "="}
+          </button>
         </nav>
       </div>
     </header>
