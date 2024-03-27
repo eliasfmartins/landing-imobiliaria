@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </div>
       <div className="min-h-[35vh] flex max-w-[1200px] mx-auto">
-        <div className="flex flex-col space-y-10  bg-slate-700 items-center mt-7">
+        <div className="flex flex-col space-y-10  bg-slate-700 items-center mt-7  h-[300px] p-4">
           <h2 className="w-96 text-3xl">
             Um Lançamento Com Excelência E Qualidade
           </h2>
@@ -50,7 +50,11 @@ export default function Home() {
             Plantas
           </Link>
         </div>
-        <Image/>
+        <img
+
+          src={"/Section.jpg"}
+          className=" mt-[-185px] z-10 bg-transparent flex flex-1"
+        />
       </div>
     </main>
   );
