@@ -14,28 +14,43 @@ export const Header = () => {
           alt=""
           className="object-cover"
         />
-        <nav
-         
-        >
-          <ul  className={` items-center justify-center hidden bg-red-500 h-full ${navbar ? "h-screen block bg-purple-600 flex-col m-auto" : ""}sm:flex `}>
-            <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
+        <nav>
+          <ul
+            className={` items-center justify-center h-20 sm:flex bg-red-500  ${navbar ? "h-screen flex bg-purple-600 flex-col m-auto top-0 right-0 left-0 fixed z-20" : "h-0 transition-all ease-in-out"}`}
+          >
+            <li
+              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              onClick={() => setNavBar((e) => !e)}
+            >
               Home
             </li>
-            <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
+            <li
+              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              onClick={() => setNavBar((e) => !e)}
+            >
               Venda
             </li>
-            <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
+            <li
+              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              onClick={() => setNavBar((e) => !e)}
+            >
               Locação
             </li>
-            <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
+            <li
+              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              onClick={() => setNavBar((e) => !e)}
+            >
               Quem Somos
             </li>
-            <li className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 ">
+            <li
+              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              onClick={() => setNavBar((e) => !e)}
+            >
               Fale Conosco
             </li>
           </ul>
           <button
-            className="sm:hidden bg-red-600"
+            className="sm:hidden bg-red-600 z-50"
             onClick={() => setNavBar((e) => !e)}
           >
             {navbar ? "x" : "="}
