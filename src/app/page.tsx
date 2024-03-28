@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <Header />
       <div
-        className="flex items-center justify-center text-center "
+        className="flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "linear-gradient(to bottom, #0001, #000), url(/tower.jpg)",
@@ -41,7 +41,7 @@ export default function Home() {
             Um Lançamento Com Excelência E Qualidade
           </h2>
           <p className="font-extralight text-md">
-            Oportunidade única para quem tem bom gosto e quer morar bem
+            Oportunidade única para quem tem bom gosto e quer morar bem aqui em Valparaiso
           </p>
           <Link
             href=""
