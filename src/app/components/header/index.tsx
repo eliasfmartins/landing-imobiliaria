@@ -16,9 +16,12 @@ export const Header = () => {
         />
         <nav className="flex">
           <button
-            className="sm:hidden bg-red-600 h-fit m-auto z-30"
+            className="sm:hidden bg-red-600 h-fit m-auto z-30 w-8 flex items-center "
             onClick={() => setNavBar((e) => !e)}
           >
+            <hr />
+            <hr />
+            <hr />
             {navbar ? "x" : "="}
             
           </button>
