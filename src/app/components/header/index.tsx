@@ -5,8 +5,8 @@ import { useState } from "react";
 export const Header = () => {
   const [navbar, setNavBar] = useState<boolean>(false);
   return (
-    <header className={` bg-slate-400 z-50 w-full ${navbar ? " fixed " : ""}`}>
-      <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center  px-8 text-gray-500 max-h-20">
+    <header className={` bg-zinc-100 z-50 w-full ${navbar ? " fixed mb-[80px]" : ""}`}>
+      <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
           src={"/pao.svg"}
           height={120}
@@ -20,37 +20,38 @@ export const Header = () => {
             onClick={() => setNavBar((e) => !e)}
           >
             {navbar ? "x" : "="}
+            
           </button>
           <ul
-            className={` items-center justify-centertransition-all z-50 h-0 w-full transition-all flex ${navbar ? "flex fixed w-full top-[70px] right-0 bg-pink-500 flex-col h-screen items-center gap-10" : ""}`}
+            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex items-center flex bg-zinc-100 duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen  " : "invisible flex transition-all duration-1000"}`}
           >
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
-              onClick={() => setNavBar((e) => !e)}
+              onClick={() => setNavBar(false)}
             >
               Home
             </li>
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
-              onClick={() => setNavBar((e) => !e)}
+              onClick={() => setNavBar(false)}
             >
               Venda
             </li>
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
-              onClick={() => setNavBar((e) => !e)}
+              onClick={() => setNavBar(false)}
             >
               Locação
             </li>
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
-              onClick={() => setNavBar((e) => !e)}
+              onClick={() => setNavBar(false)}
             >
               Quem Somos
             </li>
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
-              onClick={() => setNavBar((e) => !e)}
+              onClick={() => setNavBar(false)}
             >
               Fale Conosco
             </li>
