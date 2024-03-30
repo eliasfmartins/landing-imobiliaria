@@ -18,17 +18,17 @@ export const Header = () => {
         />
         <nav className="flex">
           <button
-            className="sm:hidden h-fit m-auto z-30 w-8 flex items-center flex-col gap-1 p-1 relative"
+            className="sm:hidden h-[25px] m-auto z-30 w-8 flex items-center flex-col gap-1 p-1 relative"
             onClick={() => setNavBar((e) => !e)}
           >
             <hr
-              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute ${navbar ? "rotate-[50deg] top-3 " : "top-2 "}`}
+              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute ${navbar ? "rotate-[50deg] top-2 " : "top-0 "}`}
             />
             <hr
-              className={` h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "bg-transparent top-2 " : "bg-blue-700 top-3"}`}
+              className={` h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "bg-transparent top-1 " : "bg-blue-700 top-2"}`}
             />
             <hr
-              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute top-4 ${navbar ? "rotate-[-50deg] " : ""}`}
+              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "rotate-[-50deg] top-2 " : "top-4"}`}
             />
           </button>
           <ul
