@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Header } from "./components/Header/index";
-import { playfair } from "./layout";
-import { roboto } from "./layout";
+import { playfair } from "./fonts";
+import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
