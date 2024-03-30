@@ -1,9 +1,19 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [navbar, setNavBar] = useState<boolean>(false);
+  
+  // Handle screen resize events
+  useEffect(() => {
+  const desactivateNavBar = () => setNavBar(false);
+    window.addEventListener("resize", desactivateNavBar);
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener("resize", desactivateNavBar);
+  }, []);
+
+
   return (
     <header
       className={` bg-zinc-100 z-50 w-full ${navbar ? " fixed mb-[80px]" : ""}`}
