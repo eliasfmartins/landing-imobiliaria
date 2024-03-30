@@ -5,7 +5,9 @@ import { useState } from "react";
 export const Header = () => {
   const [navbar, setNavBar] = useState<boolean>(false);
   return (
-    <header className={` bg-zinc-100 z-50 w-full ${navbar ? " fixed mb-[80px]" : ""}`}>
+    <header
+      className={` bg-zinc-100 z-50 w-full ${navbar ? " fixed mb-[80px]" : ""}`}
+    >
       <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
           src={"/pao.svg"}
@@ -16,17 +18,21 @@ export const Header = () => {
         />
         <nav className="flex">
           <button
-            className="sm:hidden bg-red-600 h-fit m-auto z-30 w-8 flex items-center "
+            className="sm:hidden h-fit m-auto z-30 w-8 flex items-center flex-col gap-1 p-1 relative"
             onClick={() => setNavBar((e) => !e)}
           >
-            <hr />
-            <hr />
-            <hr />
-            {navbar ? "x" : "="}
-            
+            <hr
+              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute ${navbar ? "rotate-[50deg] top-3 " : "top-2 "}`}
+            />
+            <hr
+              className={` h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "bg-transparent top-2 " : "bg-blue-700 top-3"}`}
+            />
+            <hr
+              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute top-4 ${navbar ? "rotate-[-50deg] " : ""}`}
+            />
           </button>
           <ul
-            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex items-center flex bg-zinc-100 duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen  " : "invisible flex transition-all duration-1000"}`}
+            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex items-center flex bg-zinc-100 duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12  " : "invisible flex transition-all duration-1000"}`}
           >
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
