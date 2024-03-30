@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Header } from "./components/header/index";
+import { Header } from "./components/Header/index";
 import { playfair } from "./layout";
 import { roboto } from "./layout";
 import Image from "next/image";
+import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
@@ -55,6 +56,7 @@ export default function Home() {
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
+      <Footer/>
     </main>
   );
 }
