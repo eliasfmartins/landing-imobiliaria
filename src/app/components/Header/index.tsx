@@ -32,13 +32,13 @@ export const Header = () => {
             onClick={() => setNavBar((e) => !e)}
           >
             <hr
-              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute ${navbar ? "rotate-[50deg] top-2 " : "top-0 "}`}
+              className={`bg-yellow-600 h-1  w-full rounded border-none transition-all transform absolute ${navbar ? "rotate-[50deg] top-2 " : "top-0 "}`}
             />
             <hr
-              className={` h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "bg-transparent top-1 " : "bg-blue-700 top-2"}`}
+              className={` h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "bg-transparent top-1 " : "bg-yellow-600 top-2"}`}
             />
             <hr
-              className={`bg-blue-700 h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "rotate-[-50deg] top-2 " : "top-4"}`}
+              className={`bg-yellow-600 h-1  w-full rounded border-none transition-all transform absolute  ${navbar ? "rotate-[-50deg] top-2 " : "top-4"}`}
             />
           </button>
           <ul
