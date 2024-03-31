@@ -61,7 +61,7 @@ export default function Home() {
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
-      <div className="flex gap-8 items-center justify-center my-[70px]">
+      <div className="flex gap-8 items-center justify-center my-[70px] flex-wrap" >
         <div className="max-w-[300px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
           <h2 className="text-2xl font-[700] flex justify-between">
             Finaciamento <MdAttachMoney size={35} />
@@ -136,6 +136,12 @@ export default function Home() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
+      </div>
+      <div className="">
+        <h2>Imóveis por região</h2>
+        <div className="">
+          
+        </div>
       </div>
 
       <Footer />
