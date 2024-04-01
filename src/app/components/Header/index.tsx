@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [navbar, setNavBar] = useState<boolean>(false);
+  const [isTop, setIsTop] = useState<boolean>(true);
   
   // Handle screen resize events
   useEffect(() => {
@@ -12,13 +13,27 @@ export const Header = () => {
     // Cleanup function to remove event listener on component unmount
     return () => window.removeEventListener("resize", desactivateNavBar);
   }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0 && isTop) {
+        setIsTop(false);
+      } else if (scrollPosition === 0 && !isTop) {
+        setIsTop(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isTop]);
 
 
   return (
     <header
-      className={` bg-zinc-100 z-50 w-full ${navbar ? " fixed mb-[80px]" : ""}`}
+      className={` z-50 w-full fixed  transition-all ease-in-out duration-1000  ${navbar ? " fixed mb-[80px]" : ""} ${isTop?'bg-transparent-600 ':'bg-black/80'}`}
     >
-      <div className="mx-auto max-w-[1200px] bg-zinc-100 flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
+      <div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
           src={"/pao.svg"}
           height={120}
@@ -42,7 +57,7 @@ export const Header = () => {
             />
           </button>
           <ul
-            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex items-center flex bg-zinc-100 duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12  " : "invisible flex transition-all duration-1000"}`}
+            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex  text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12  " : "invisible flex transition-all duration-1000"}`}
           >
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "

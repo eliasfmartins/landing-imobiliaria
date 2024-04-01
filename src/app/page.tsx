@@ -17,7 +17,7 @@ export default function Home() {
         className="flex items-center justify-center text-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, #0001, #000), url(/tower.jpg)",
+            "linear-gradient(to bottom, #000000e6, #000000ab), url(/tower.jpg)",
           filter: "brightness(150%)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -61,14 +61,14 @@ export default function Home() {
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
-      <div className="flex gap-8 items-center justify-center my-[70px] flex-wrap" >
-        <div className="max-w-[300px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
+      <div className="flex gap-8 items-center justify-between my-[70px] flex-wrap bg-red-400 max-w-[1200px] mx-auto" >
+        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
           <h2 className="text-2xl font-[700] flex justify-between">
             Finaciamento <MdAttachMoney size={35} />
           </h2>
           <p>
             As melhores ofertas de crédito para 
-            você finaciar seu<br /> imóvel
+            você finaciar seu imóvel
           </p>
 
           <Link
@@ -82,7 +82,7 @@ export default function Home() {
             <FaArrowRight size={30} />
           </Link>
         </div>
-        <div className="max-w-[300px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
+        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
           <h2 className="text-2xl font-[700] flex justify-between">
             Anuncie conosco! <GrTemplate size={30} />
           </h2>
@@ -102,7 +102,7 @@ export default function Home() {
             <FaArrowRight size={30} />
           </Link>
         </div>
-        <div className="max-w-[300px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
+        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
           <h2 className="text-2xl font-[700] flex justify-between">
             Ouvidoria{" "}
             <TfiAnnouncement size={30} className="text-2xl font-[700]" />
