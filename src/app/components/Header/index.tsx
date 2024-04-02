@@ -31,7 +31,7 @@ export const Header = () => {
 
   return (
     <header
-      className={` z-50 w-full fixed  transition-all ease-in-out duration-1000  ${navbar ? " fixed mb-[80px]" : ""} ${isTop?'bg-transparent-600 ':'bg-black/80'}`}
+      className={` z-50 w-full fixed  transition-all ease-in-out duration-1000  ${navbar ? " fixed mb-[80px] bg-black" : ""} ${isTop?'bg-transparent-600 ':'bg-black'}`}
     >
       <div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
@@ -57,7 +57,7 @@ export const Header = () => {
             />
           </button>
           <ul
-            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex  text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12  " : "invisible flex transition-all duration-1000"}`}
+            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex  text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12   bg-black" : "invisible flex transition-all duration-1000"}`}
           >
             <li
               className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
