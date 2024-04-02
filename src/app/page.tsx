@@ -3,18 +3,13 @@ import { Header } from "./components/Header/index";
 import { playfair } from "./fonts";
 import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
-import { MdAttachMoney } from "react-icons/md";
-import { FaArrowsAltV } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
-import { TfiAnnouncement } from "react-icons/tfi";
-import { GrTemplate } from "react-icons/gr";
 
 export default function Home() {
   return (
     <main>
       <Header />
       <div
-        className="flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center "
         style={{
           backgroundImage:
             "linear-gradient(to bottom, #000000e6, #000000ab), url(/tower.jpg)",
@@ -61,67 +56,51 @@ export default function Home() {
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
-      <div className="flex gap-8 items-center justify-between my-[70px] flex-wrap bg-red-400 max-w-[1200px] mx-auto" >
-        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
-          <h2 className="text-2xl font-[700] flex justify-between">
-            Finaciamento <MdAttachMoney size={35} />
-          </h2>
-          <p>
-            As melhores ofertas de crédito para 
-            você finaciar seu imóvel
-          </p>
 
-          <Link
-            href={"#"}
-            className="flex w-[90%] hover:w-full transition-all justify-between items-center"
-          >
-            <span className="border-b-2 border-yellow-600 p-1">
-              Faça uma simulação
-            </span>
+      <div className=" max-w-[1200px] mx-auto mt-12">
+        <h2 className=" flex  justify-center text-4xl">O que nós fazemos?</h2>
+        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
+        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
+        <p className="text-center mt-12">Veja alguns do nossos serviços</p>
+        <div className=" bg-red-600 mt-[80px] flex justify-between items-center w-full">
 
-            <FaArrowRight size={30} />
-          </Link>
-        </div>
-        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
-          <h2 className="text-2xl font-[700] flex justify-between">
-            Anuncie conosco! <GrTemplate size={30} />
-          </h2>
-          <p>
-            Deixe seu contato cuidarmos do seu imóvel e vc cudar do que
-            realmente importa
-          </p>
 
-          <Link
-            href={"#"}
-            className="flex w-[90%] hover:w-full transition-all justify-between items-center"
-          >
-            <span className="border-b-2 border-yellow-600 p-1">
-              Anuncie conosco!
-            </span>
+          <div className="max-w-[250px] text-center">
+            <img src="" alt="" />
+            <h2 className="text-center">Simulamos seu finaciamento</h2>
+            <p className="p-6">
+              Faça uma simulação de crédito para a compra do seu novo imóvel.
+            </p>
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5">Simular financiamento</button>
+          </div>
 
-            <FaArrowRight size={30} />
-          </Link>
-        </div>
-        <div className="max-w-[350px] shadow-lg rounded-xl  p-4 flex flex-col gap-3">
-          <h2 className="text-2xl font-[700] flex justify-between">
-            Ouvidoria{" "}
-            <TfiAnnouncement size={30} className="text-2xl font-[700]" />
-          </h2>
-          <p>
-            Deixe sua sugestão ou reclamação para que possamos melhorar nossos
-            serviços
-          </p>
+          <div>
+            <h2>Encontramos seu novo lar</h2>
+            <p>
+              Nossa equipe te auxilia a encontrar seu imóvel com muita
+              facilidade e segurança.
+            </p>
+            <button>Saiba mais</button>
+          </div>
 
-          <Link
-            href={"#"}
-            className="flex w-[90%] hover:w-full transition-all justify-between items-center"
-          >
-            <span className="border-b-2 border-yellow-600 p-1">
-              Envie sua mensagem
-            </span>
 
-            <FaArrowRight size={30} />
-          </Link>
+          <div>
+            <h2>Intermediação de todo o processo </h2>
+            <p>
+              Acompanhamos todo o processo de compra até a entrega da sua chave.
+            </p>
+            <button>Conheça todas as etapas</button>
+          </div>
+
+
+          <div>
+            <h2>Fale com seu corretor</h2>
+            <p>
+             Temos uma equipe pronta para realizar a sua maior conquista.
+            </p>
+            <button>Fale conosco</button>
+          </div>
+
         </div>
       </div>
       <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
@@ -139,9 +118,7 @@ export default function Home() {
       </div>
       <div className="">
         <h2>Imóveis por região</h2>
-        <div className="">
-          
-        </div>
+        <div className=""></div>
       </div>
 
       <Footer />
