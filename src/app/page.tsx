@@ -62,45 +62,55 @@ export default function Home() {
         <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
-        <div className=" bg-red-600 mt-[80px] flex justify-between items-center w-full">
-
-
-          <div className="max-w-[250px] text-center">
-            <img src="" alt="" />
-            <h2 className="text-center">Simulamos seu finaciamento</h2>
+        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+            <img src="simule.svg" className="mx-auto mt-4" />
+            <h2 className="text-center text-xl my-2">
+              Simulamos seu finaciamento
+            </h2>
             <p className="p-6">
               Faça uma simulação de crédito para a compra do seu novo imóvel.
             </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5">Simular financiamento</button>
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5 ">
+              Simular financiamento
+            </button>
           </div>
-
-          <div>
-            <h2>Encontramos seu novo lar</h2>
-            <p>
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+            <img src="find.svg" className="mx-auto mt-4" />
+            <h2 className="text-center text-xl my-2">
+              Encontramos seu novo lar
+            </h2>
+            <p className="p-6">
               Nossa equipe te auxilia a encontrar seu imóvel com muita
               facilidade e segurança.
             </p>
-            <button>Saiba mais</button>
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+              Saiba mais
+            </button>
           </div>
-
-
-          <div>
-            <h2>Intermediação de todo o processo </h2>
-            <p>
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 m">
+            <img src="intermediacao.svg" className="mx-auto mt-4" />
+            <h2 className="text-center text-xl my-2">
+              Intermediação de todo o processo{" "}
+            </h2>
+            <p className="p-6">
               Acompanhamos todo o processo de compra até a entrega da sua chave.
             </p>
-            <button>Conheça todas as etapas</button>
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+              Conheça todas as etapas
+            </button>
           </div>
 
-
-          <div>
-            <h2>Fale com seu corretor</h2>
-            <p>
-             Temos uma equipe pronta para realizar a sua maior conquista.
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+            <img src="talk.svg" className="mx-auto mt-4" />
+            <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
+            <p className="p-6">
+              Temos uma equipe pronta para realizar a sua maior conquista.
             </p>
-            <button>Fale conosco</button>
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+              Fale conosco
+            </button>
           </div>
-
         </div>
       </div>
       <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
