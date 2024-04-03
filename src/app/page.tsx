@@ -63,7 +63,7 @@ export default function Home() {
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
-          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl">
             <img src="simule.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Simulamos seu finaciamento
@@ -75,7 +75,7 @@ export default function Home() {
               Simular financiamento
             </button>
           </div>
-          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl">
             <img src="find.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Encontramos seu novo lar
@@ -88,7 +88,7 @@ export default function Home() {
               Saiba mais
             </button>
           </div>
-          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 m">
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl">
             <img src="intermediacao.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Intermediação de todo o processo{" "}
@@ -101,7 +101,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0">
+          <div className="sm:max-w-[250px] text-center flex flex-col justify-between h-full min-h-[320px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl">
             <img src="talk.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
             <p className="p-6">

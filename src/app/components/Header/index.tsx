@@ -57,34 +57,34 @@ export const Header = () => {
             />
           </button>
           <ul
-            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto sm:gap-0 sm:flex-row sm:visible sm:flex  text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12   bg-black" : "invisible flex transition-all duration-1000"}`}
+            className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto  sm:flex-row sm:visible sm:flex  sm:gap-1 text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12   bg-black" : "invisible flex transition-all duration-1000"}`}
           >
             <li
-              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              className="transition duration-500  hover:bg-yellow-600 rounded-md px-4 py-3  cursor-pointer"
               onClick={() => setNavBar(false)}
             >
               Home
             </li>
             <li
-              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
               onClick={() => setNavBar(false)}
             >
               Venda
             </li>
             <li
-              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer "
               onClick={() => setNavBar(false)}
             >
               Locação
             </li>
             <li
-              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
               onClick={() => setNavBar(false)}
             >
               Quem Somos
             </li>
             <li
-              className="border-b-4 border-transparent hover:border-cyan-400 transition duration-500 p-2 "
+              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
               onClick={() => setNavBar(false)}
             >
               Fale Conosco
