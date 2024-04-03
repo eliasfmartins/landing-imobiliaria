@@ -35,7 +35,7 @@ export const Header = () => {
     >
       <div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
-          src={"/pao.svg"}
+          src={"/logo.svg"}
           height={120}
           width={120}
           alt=""
