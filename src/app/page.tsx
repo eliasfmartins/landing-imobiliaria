@@ -24,13 +24,13 @@ export default function Home() {
             className={`${playfair.className}  text-6xl sm:text-7xl font-[500] text-white max-w-[90%] mx-auto tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
-            MARTINS & SILVA
+            Pensando em comprar ou vender?
           </h2>
           <h3
             className={`${roboto.className} text-4xl font-[200] text-white tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
-            Escritório Imobiliário
+           Os melhores imóveis do Valparaiso e regiao estão aqui!
           </h3>
           <div className="w-[300px] bg-yellow-600 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
             <img src="simule.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Simulamos seu finaciamento
@@ -71,11 +71,11 @@ export default function Home() {
             <p className="">
               Faça uma simulação de crédito para a compra do seu novo imóvel.
             </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5 ">
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
               Simular financiamento
             </button>
           </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
             <img src="find.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Encontramos seu novo lar
@@ -84,11 +84,11 @@ export default function Home() {
               Nossa equipe te auxilia a encontrar seu imóvel com muita
               facilidade e segurança.
             </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
               Saiba mais
             </button>
           </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
             <img src="intermediacao.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">
               Intermediação de todo o processo{" "}
@@ -96,18 +96,18 @@ export default function Home() {
             <p className="">
               Acompanhamos todo o processo de compra até a entrega da sua chave.
             </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
               Conheça todas as etapas
             </button>
           </div>
 
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
             <img src="talk.svg" className="mx-auto mt-4" />
             <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
             <p className="">
               Temos uma equipe pronta para realizar a sua maior conquista.
             </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5">
+            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
               Fale conosco
             </button>
           </div>
