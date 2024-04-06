@@ -3,6 +3,8 @@ import { Header } from "./components/Header/index";
 import { playfair } from "./fonts";
 import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
+import CardImoveis from "./components/CardImoveis";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -64,7 +66,7 @@ export default function Home() {
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-            <img src="simule.svg" className="mx-auto mt-4" />
+          <Image src="simule.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
             <h2 className="text-center text-xl my-2">
               Simulamos seu finaciamento
             </h2>
@@ -76,7 +78,7 @@ export default function Home() {
             </button>
           </div>
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-            <img src="find.svg" className="mx-auto mt-4" />
+          <Image src="find.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
             <h2 className="text-center text-xl my-2">
               Encontramos seu novo lar
             </h2>
@@ -89,7 +91,7 @@ export default function Home() {
             </button>
           </div>
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-            <img src="intermediacao.svg" className="mx-auto mt-4" />
+          <Image src="intermediacao.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
             <h2 className="text-center text-xl my-2">
               Intermediação de todo o processo{" "}
             </h2>
@@ -102,7 +104,7 @@ export default function Home() {
           </div>
 
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-            <img src="talk.svg" className="mx-auto mt-4" />
+            <Image src="talk.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
             <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
             <p className="">
               Temos uma equipe pronta para realizar a sua maior conquista.
@@ -111,6 +113,18 @@ export default function Home() {
               Fale conosco
             </button>
           </div>
+        </div>
+      </div>
+      <div className=" max-w-[1200px] mx-auto mt-12">
+        <h2 className=" flex  justify-center text-4xl">Imóveis em destaque?</h2>
+        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
+        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
+        <p className="text-center mt-12">Os melhores imóveis á venda você encontra aqui</p>
+        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 bg-purple-500  h-screen">
+          <CardImoveis/>
+          <CardImoveis/>
+          <CardImoveis/>
+          
         </div>
       </div>
       <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
