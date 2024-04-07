@@ -32,7 +32,7 @@ export default function Home() {
             className={`${roboto.className} text-4xl font-[200] text-white tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
-           Os melhores imóveis do Valparaiso e regiao estão aqui!
+           Os melhores imóveis do Valparaíso e região estão aqui!
           </h3>
           <div className="w-[300px] bg-yellow-600 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
@@ -53,13 +53,24 @@ export default function Home() {
             Plantas
           </Link>
         </div>
-        <img
+        <Image width={1200} height={1200} alt=""
           src={"/temp.png"}
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
       </div>
-
       <div className=" max-w-[1200px] mx-auto mt-12">
+        <h2 className=" flex  justify-center text-4xl">Imóveis em destaque?</h2>
+        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
+        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
+        <p className="text-center mt-12">Os melhores imóveis á venda você encontra aqui</p>
+        <div className=" mt-[80px] flex sm:justify-between items-center w-full/20 flex-wrap mb-[80px] p-4  justify-center gap-y-8">
+          <CardImoveis/>
+          <CardImoveis/>
+          <CardImoveis/>
+          
+        </div>
+      </div>
+      <div className=" max-w-[1200px] mx-auto mt-0">
         <h2 className=" flex  justify-center text-4xl">O que nós fazemos?</h2>
         <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
@@ -115,32 +126,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" max-w-[1200px] mx-auto mt-12">
-        <h2 className=" flex  justify-center text-4xl">Imóveis em destaque?</h2>
-        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
-        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
-        <p className="text-center mt-12">Os melhores imóveis á venda você encontra aqui</p>
-        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 bg-purple-500  h-screen">
-          <CardImoveis/>
-          <CardImoveis/>
-          <CardImoveis/>
-          
-        </div>
-      </div>
-      <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
-        <h2 className="text font-[700]  text-3xl text-center mb-6">
-          Endereço aqui
-        </h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.655028886112!2d-47.97700482486391!3d-16.083381484598178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9359858fb0af83a7%3A0x775b6a22cc9dc214!2sImobili%C3%A1ria%20Martins%20e%20Silva!5e0!3m2!1spt-BR!2sbr!4v1711832737732!5m2!1spt-BR!2sbr"
-          width="100%"
-          height="450"
-          style={{ border: "0" }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-      <div className=" bg-red-400 w-full max-w-[1200px] mx-auto p-5">
+      
+       <div className=" bg-red-400 w-full max-w-[1200px] mx-auto p-5">
         <h2 className=" text-2xl mb-5">Imóveis por região</h2>
         <div className=" flex w-full justify-between ">
           <ul>
@@ -177,6 +164,20 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
+        <h2 className="text font-[700]  text-3xl text-center mb-6">
+          Endereço aqui
+        </h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.655028886112!2d-47.97700482486391!3d-16.083381484598178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9359858fb0af83a7%3A0x775b6a22cc9dc214!2sImobili%C3%A1ria%20Martins%20e%20Silva!5e0!3m2!1spt-BR!2sbr!4v1711832737732!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="450"
+          style={{ border: "0" }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+     
 
       <Footer />
     </main>
