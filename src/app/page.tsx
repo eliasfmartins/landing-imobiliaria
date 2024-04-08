@@ -32,7 +32,7 @@ export default function Home() {
             className={`${roboto.className} text-4xl font-[200] text-white tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
-           Os melhores imóveis do Valparaíso e região estão aqui!
+            Os melhores imóveis do Valparaíso e região estão aqui!
           </h3>
           <div className="w-[300px] bg-yellow-700 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
@@ -53,7 +53,10 @@ export default function Home() {
             Plantas
           </Link>
         </div>
-        <Image width={1200} height={1200} alt=""
+        <Image
+          width={1200}
+          height={1200}
+          alt=""
           src={"/temp.png"}
           className=" xl:mt-[-205px] z-10 bg-transparent flex flex-1"
         />
@@ -62,11 +65,13 @@ export default function Home() {
         <h2 className=" flex  justify-center text-4xl">Imóveis em destaque?</h2>
         <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
-        <p className="text-center mt-12">Os melhores imóveis á venda você encontra aqui</p>
+        <p className="text-center mt-12">
+          Os melhores imóveis á venda você encontra aqui
+        </p>
         <div className=" mt-[80px] flex sm:justify-between items-center w-full/20 flex-wrap mb-[80px] p-4  justify-center gap-y-8">
-          <CardImoveis/>
-          <CardImoveis/>
-          <CardImoveis/>
+          <CardImoveis />
+          <CardImoveis />
+          <CardImoveis />
         </div>
       </div>
       <div className=" max-w-[1200px] mx-auto mt-0">
@@ -76,7 +81,13 @@ export default function Home() {
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-          <Image src="simule.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
+            <Image
+              src="simule.svg"
+              className="mx-auto mt-4 w-full"
+              alt="icon"
+              width={100}
+              height={100}
+            />
             <h2 className="text-center text-xl my-2">
               Simulamos seu finaciamento
             </h2>
@@ -88,7 +99,13 @@ export default function Home() {
             </button>
           </div>
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-          <Image src="find.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
+            <Image
+              src="find.svg"
+              className="mx-auto mt-4 w-full"
+              alt="icon"
+              width={100}
+              height={100}
+            />
             <h2 className="text-center text-xl my-2">
               Encontramos seu novo lar
             </h2>
@@ -101,7 +118,13 @@ export default function Home() {
             </button>
           </div>
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-          <Image src="intermediacao.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
+            <Image
+              src="intermediacao.svg"
+              className="mx-auto mt-4 w-full"
+              alt="icon"
+              width={100}
+              height={100}
+            />
             <h2 className="text-center text-xl my-2">
               Intermediação de todo o processo{" "}
             </h2>
@@ -114,7 +137,13 @@ export default function Home() {
           </div>
 
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
-            <Image src="talk.svg" className="mx-auto mt-4 w-full" alt="icon" width={100} height={100}  />
+            <Image
+              src="talk.svg"
+              className="mx-auto mt-4 w-full"
+              alt="icon"
+              width={100}
+              height={100}
+            />
             <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
             <p className="">
               Temos uma equipe pronta para realizar a sua maior conquista.
@@ -125,8 +154,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
-       <div className=" bg-red-400 w-full max-w-[1200px] mx-auto p-5">
+
+      <div className=" bg-red-400 w-full max-w-[1200px] mx-auto p-5">
         <h2 className=" text-2xl mb-5">Imóveis por região</h2>
         <div className=" flex w-full justify-between ">
           <ul>
@@ -176,7 +205,22 @@ export default function Home() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-     
+      <div className=" max-w-[1200px] mx-auto mt-12">
+        <h2 className=" flex  justify-center text-4xl">Nossos Corretores</h2>
+        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
+        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full my-3" />
+        <p className="my-5">Conheça nosso time de corretores especializados.</p>
+        <div className="flex flex-col sm:flex-row  gap-4">
+        <div className="mx-auto bg-purple-600 w-[280px] h-[400px] rounded-lg">
+          <div className="bg-red-600 w-full h-[25%]"></div>
+          <div>
+            
+          </div>
+        </div>
+
+        </div>
+
+      </div>
 
       <Footer />
     </main>
