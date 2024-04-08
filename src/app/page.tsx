@@ -34,7 +34,7 @@ export default function Home() {
           >
            Os melhores imóveis do Valparaíso e região estão aqui!
           </h3>
-          <div className="w-[300px] bg-yellow-600 h-1 mx-auto rounded-lg mt-2"></div>
+          <div className="w-[300px] bg-yellow-700 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
       </div>
       <div className="min-h-[35vh] xl:flex max-w-[1200px] mx-auto mt-20">
@@ -67,7 +67,6 @@ export default function Home() {
           <CardImoveis/>
           <CardImoveis/>
           <CardImoveis/>
-          
         </div>
       </div>
       <div className=" max-w-[1200px] mx-auto mt-0">
