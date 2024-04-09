@@ -79,8 +79,8 @@ export default function Home() {
         <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
         <p className="text-center mt-12">Veja alguns do nossos serviços</p>
-        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4">
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
+        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border ">
             <Image
               src="simule.svg"
               className="mx-auto mt-4 w-full"
@@ -98,7 +98,7 @@ export default function Home() {
               Simular financiamento
             </button>
           </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
             <Image
               src="find.svg"
               className="mx-auto mt-4 w-full"
@@ -117,7 +117,7 @@ export default function Home() {
               Saiba mais
             </button>
           </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
             <Image
               src="intermediacao.svg"
               className="mx-auto mt-4 w-full"
@@ -136,7 +136,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500">
+          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
             <Image
               src="talk.svg"
               className="mx-auto mt-4 w-full"
@@ -209,17 +209,39 @@ export default function Home() {
         <h2 className=" flex  justify-center text-4xl">Nossos Corretores</h2>
         <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
         <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full my-3" />
-        <p className="my-5">Conheça nosso time de corretores especializados.</p>
-        <div className="flex flex-col sm:flex-row  gap-4">
-        <div className="mx-auto bg-purple-600 w-[280px] h-[400px] rounded-lg">
-          <div className="bg-red-600 w-full h-[25%]"></div>
-          <div>
-            
+        <p className="my-5 text-center">
+          Conheça nosso time de corretores especializados.
+        </p>
+        <div className="flex flex-col sm:flex-row   bg-pink-500 w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
+          <div className="mx-auto bg-purple-600 w-[280px] h-[400px] rounded-lg overflow-hidden relative">
+            <div className="bg-red-600 w-full h-[25%]"></div>
+            <div>
+              <div className="bg-orange-500 rounded-full h-[150px] w-[150px] mx-auto mt-[-25%] border-4 border-white"></div>
+              <h2 className="mt-8 mx-auto bg-slate-400 text-center text-lg font-[500]">
+                Corretora Carla Martins
+              </h2>
+              <p className="text-center">Creci: 54156754 GO</p>
+            </div>
+            <div className=" w-full h-[15%] absolute bottom-0 border-t mx-auto flex justify-around flex-1 items-center">
+              <span>Email</span>
+              <span>WPP</span>
+            </div>
+          </div>
+          <div className="mx-auto bg-purple-600 w-[280px] h-[400px] rounded-lg overflow-hidden relative">
+            <div className="bg-red-600 w-full h-[25%]"></div>
+            <div>
+              <div className="bg-orange-500 rounded-full h-[150px] w-[150px] mx-auto mt-[-25%] border-4 border-white"></div>
+              <h2 className="mt-8 mx-auto bg-slate-400 text-center text-lg font-[500]">
+                Corretora Carla Martins
+              </h2>
+              <p className="text-center">Creci: 54156754 GO</p>
+            </div>
+            <div className=" w-full h-[15%] absolute bottom-0 border-t mx-auto flex justify-around flex-1 items-center">
+              <span>Email</span>
+              <span>WPP</span>
+            </div>
           </div>
         </div>
-
-        </div>
-
       </div>
 
       <Footer />
