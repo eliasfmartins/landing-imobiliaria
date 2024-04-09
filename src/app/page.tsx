@@ -14,11 +14,11 @@ export default function Home() {
         className="flex items-center justify-center text-center "
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, #000000e6, #000000ab), url(/tower.jpg)",
+            "linear-gradient(to bottom, #000000eb, #000000da), url(/tower.jpg)",
           filter: "brightness(150%)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "calc(100vh - 80px)",
+          height: "calc(100vh )",
         }}
       >
         <div className="flex flex-col gap-y-6">
