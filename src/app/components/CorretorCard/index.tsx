@@ -5,8 +5,10 @@ import { IoMdMail } from "react-icons/io";
 type CardTipes = {
   name: string;
   creci: string;
+  phone?: string;
+  email?: string;
 };
-export const CorretorCard = ({ name, creci }: CardTipes) => {
+export const CorretorCard = ({ name, creci, phone, email }: CardTipes) => {
   return (
     <div>
       <div className="mx-auto bg-purple-600 w-[280px] h-[400px] rounded-lg overflow-hidden relative">
@@ -19,12 +21,16 @@ export const CorretorCard = ({ name, creci }: CardTipes) => {
           <p className="text-center">Creci: {creci}</p>
         </div>
         <div className=" w-full h-[15%] absolute bottom-0 border-t mx-auto flex justify-center flex-1 items-center gap-x-8">
-          <span>
-            <IoMdMail size={30} />
-          </span>
-          <span>
-            <FaWhatsapp size={30} />
-          </span>
+          {phone && (
+            <span>
+              <FaWhatsapp size={30} />
+            </span>
+          )}
+          {email && (
+            <span>
+              <IoMdMail size={30} />
+            </span>
+          )}
         </div>
       </div>
     </div>
