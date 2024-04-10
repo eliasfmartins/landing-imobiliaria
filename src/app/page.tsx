@@ -8,6 +8,7 @@ import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { CorretorCard } from "./components/CorretorCard";
+import { TitlePage } from "./components/TitlePage";
 
 export default function Home() {
   return (
@@ -208,27 +209,24 @@ export default function Home() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div className=" max-w-[1200px] mx-auto mt-12">
-        <h2 className=" flex  justify-center text-4xl">Nossos Corretores</h2>
-        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
-        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full my-3" />
-        <p className="my-5 text-center">
-          Conheça nosso time de corretores especializados.
-        </p>
-        <div className="flex flex-col sm:flex-row   bg-pink-500 w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
-          <CorretorCard
-            creci="78545-DF"
-            name="Carla Martins"
-            email="Carlinha Martins"
-            phone="5145415154"
-          />
-          <CorretorCard
-            creci="78545-DF"
-            name="Carla Martins"
-            email="Carlinha Martins"
-            phone="5145415154"
-          />
-        </div>
+      <TitlePage
+        firstTitle="Nossos Corretores"
+        subTitle="Conheça nosso time de corretores especializados"
+      />
+
+      <div className="flex flex-col sm:flex-row   bg-pink-500 w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
+        <CorretorCard
+          creci="78545-DF"
+          name="Carla Martins"
+          email="Carlinha Martins"
+          phone="5145415154"
+        />
+        <CorretorCard
+          creci="78545-DF"
+          name="Carla Martins"
+          email="Carlinha Martins"
+          phone="5145415154"
+        />
       </div>
 
       <Footer />
