@@ -5,8 +5,6 @@ import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
 import CardImoveis from "./components/CardImoveis";
 import Image from "next/image";
-import { FaWhatsapp } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
 import { CorretorCard } from "./components/CorretorCard";
 import { TitlePage } from "./components/TitlePage";
 
@@ -66,23 +64,22 @@ export default function Home() {
         />
       </div>
       <div className=" max-w-[1200px] mx-auto mt-12">
-        <h2 className=" flex  justify-center text-4xl">Imóveis em destaque?</h2>
-        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
-        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
-        <p className="text-center mt-12">
-          Os melhores imóveis á venda você encontra aqui
-        </p>
+        <TitlePage
+          firstTitle="Imóveis em destaque?"
+          subTitle=" Os melhores imóveis á venda você encontra aqui"
+        />
+
         <div className=" mt-[80px] flex sm:justify-between items-center w-full/20 flex-wrap mb-[80px] p-4  justify-center gap-y-8">
           <CardImoveis />
           <CardImoveis />
           <CardImoveis />
         </div>
+        <TitlePage
+          firstTitle="O que nós fazemos?"
+          subTitle="Veja alguns dos nossos serviços"
+        />
       </div>
       <div className=" max-w-[1200px] mx-auto mt-0">
-        <h2 className=" flex  justify-center text-4xl">O que nós fazemos?</h2>
-        <hr className="w-[20%] h-1 bg-yellow-600 mx-auto  rounded-full mt-8" />
-        <hr className="w-[15%] h-1 bg-yellow-600 mx-auto  rounded-full mt-3" />
-        <p className="text-center mt-12">Veja alguns do nossos serviços</p>
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
           <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border ">
             <Image
