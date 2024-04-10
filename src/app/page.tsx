@@ -3,11 +3,13 @@ import { Header } from "./components/Header/index";
 import { playfair } from "./fonts";
 import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
-import CardImoveis from "./components/CardImoveis";
 import Image from "next/image";
-import { CorretorCard } from "./components/CorretorCard";
 import { TitlePage } from "./components/TitlePage";
-import { CardAbout } from "./components/CardAbout";
+import { CardMap } from "./components/CardMap";
+import { CorretoresSection } from "./components/CorretoresSection";
+import { LocalSection } from "./components/LocalSection";
+import { CardsServices } from "./components/CardsServices";
+import { ImoveisSection } from "./components/ImoveisSection";
 
 export default function Home() {
   return (
@@ -69,117 +71,21 @@ export default function Home() {
           firstTitle="Imóveis em destaque?"
           subTitle=" Os melhores imóveis á venda você encontra aqui"
         />
-
-        <div className=" mt-[80px] flex sm:justify-between items-center w-full/20 flex-wrap mb-[80px] p-4  justify-center gap-y-8">
-          <CardImoveis />
-          <CardImoveis />
-          <CardImoveis />
-        </div>
+       <ImoveisSection/>
         <TitlePage
           firstTitle="O que nós fazemos?"
           subTitle="Veja alguns dos nossos serviços"
         />
       </div>
-      <div className=" max-w-[1200px] mx-auto mt-0">
-        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
-          <CardAbout
-            imgSrc="simule.svg"
-            subTitle="Faça uma simulação de crédito para a compra do seu novo imóvel."
-            textBtn=" Simular financiamento"
-            title=" Simulamos seu finaciamento"
-          />
-          <CardAbout
-            imgSrc="find.svg"
-            title="Encontramos seu novo lar"
-            subTitle="  Nossa equipe te auxilia a encontrar seu imóvel com muita
-              facilidade e segurança."
-            textBtn="Saiba mais"
-          />
-          <CardAbout
-            imgSrc="intermediacao.svg"
-            subTitle=" Acompanhamos todo o processo de compra até a entrega da sua chave."
-            title="Intermediação de todo o processo"
-            textBtn="Conheça todas as etapas"
-          />
-          <CardAbout
-            imgSrc="talk.svg"
-            subTitle="Temos uma equipe pronta para realizar a sua maior conquista."
-            textBtn=" Fale conosco"
-            title="Fale com seu corretor"
-          />
-        </div>
-      </div>
+      <CardsServices/>
+      <LocalSection />
 
-      <div className=" bg-red-400 w-full max-w-[1200px] mx-auto p-5">
-        <h2 className=" text-2xl mb-5">Imóveis por região</h2>
-        <div className=" flex w-full justify-between ">
-          <ul>
-            <h3>Valparaiso-GO</h3>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-          </ul>
-          <ul>
-            <h3>Brasilia-DF</h3>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-          </ul>
-          <ul>
-            <h3>Ocidental-GO</h3>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-          </ul>
-          <ul>
-            <h3>Jardin Inga-GO</h3>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-            <li>ex</li>
-          </ul>
-        </div>
-      </div>
-      <div className="max-w-[90%] mx-auto mb-8 sm:max-w-[1200px]">
-        <h2 className="text font-[700]  text-3xl text-center mb-6">
-          Endereço aqui
-        </h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.655028886112!2d-47.97700482486391!3d-16.083381484598178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9359858fb0af83a7%3A0x775b6a22cc9dc214!2sImobili%C3%A1ria%20Martins%20e%20Silva!5e0!3m2!1spt-BR!2sbr!4v1711832737732!5m2!1spt-BR!2sbr"
-          width="100%"
-          height="450"
-          style={{ border: "0" }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
       <TitlePage
         firstTitle="Nossos Corretores"
         subTitle="Conheça nosso time de corretores especializados"
       />
-
-      <div className="flex flex-col sm:flex-row   bg-pink-500 w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
-        <CorretorCard
-          creci="78545-DF"
-          name="Carla Martins"
-          email="Carlinha Martins"
-          phone="5145415154"
-        />
-        <CorretorCard
-          creci="78545-DF"
-          name="Carla Martins"
-          email="Carlinha Martins"
-          phone="5145415154"
-        />
-      </div>
-
+      <CorretoresSection />
+      <CardMap />
       <Footer />
     </main>
   );
