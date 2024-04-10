@@ -7,6 +7,7 @@ import CardImoveis from "./components/CardImoveis";
 import Image from "next/image";
 import { CorretorCard } from "./components/CorretorCard";
 import { TitlePage } from "./components/TitlePage";
+import { CardAbout } from "./components/CardAbout";
 
 export default function Home() {
   return (
@@ -81,78 +82,31 @@ export default function Home() {
       </div>
       <div className=" max-w-[1200px] mx-auto mt-0">
         <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border ">
-            <Image
-              src="simule.svg"
-              className="mx-auto mt-4 w-full"
-              alt="icon"
-              width={100}
-              height={100}
-            />
-            <h2 className="text-center text-xl my-2">
-              Simulamos seu finaciamento
-            </h2>
-            <p className="">
-              Faça uma simulação de crédito para a compra do seu novo imóvel.
-            </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
-              Simular financiamento
-            </button>
-          </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
-            <Image
-              src="find.svg"
-              className="mx-auto mt-4 w-full"
-              alt="icon"
-              width={100}
-              height={100}
-            />
-            <h2 className="text-center text-xl my-2">
-              Encontramos seu novo lar
-            </h2>
-            <p className="">
-              Nossa equipe te auxilia a encontrar seu imóvel com muita
-              facilidade e segurança.
-            </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
-              Saiba mais
-            </button>
-          </div>
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
-            <Image
-              src="intermediacao.svg"
-              className="mx-auto mt-4 w-full"
-              alt="icon"
-              width={100}
-              height={100}
-            />
-            <h2 className="text-center text-xl my-2">
-              Intermediação de todo o processo{" "}
-            </h2>
-            <p className="">
-              Acompanhamos todo o processo de compra até a entrega da sua chave.
-            </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
-              Conheça todas as etapas
-            </button>
-          </div>
-
-          <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
-            <Image
-              src="talk.svg"
-              className="mx-auto mt-4 w-full"
-              alt="icon"
-              width={100}
-              height={100}
-            />
-            <h2 className="text-center text-xl my-2">Fale com seu corretor</h2>
-            <p className="">
-              Temos uma equipe pronta para realizar a sua maior conquista.
-            </p>
-            <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000">
-              Fale conosco
-            </button>
-          </div>
+          <CardAbout
+            imgSrc="simule.svg"
+            subTitle="Faça uma simulação de crédito para a compra do seu novo imóvel."
+            textBtn=" Simular financiamento"
+            title=" Simulamos seu finaciamento"
+          />
+          <CardAbout
+            imgSrc="find.svg"
+            title="Encontramos seu novo lar"
+            subTitle="  Nossa equipe te auxilia a encontrar seu imóvel com muita
+              facilidade e segurança."
+            textBtn="Saiba mais"
+          />
+          <CardAbout
+            imgSrc="intermediacao.svg"
+            subTitle=" Acompanhamos todo o processo de compra até a entrega da sua chave."
+            title="Intermediação de todo o processo"
+            textBtn="Conheça todas as etapas"
+          />
+          <CardAbout
+            imgSrc="talk.svg"
+            subTitle="Temos uma equipe pronta para realizar a sua maior conquista."
+            textBtn=" Fale conosco"
+            title="Fale com seu corretor"
+          />
         </div>
       </div>
 
