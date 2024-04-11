@@ -3,16 +3,16 @@ import { CorretorCard } from "../CorretorCard";
 
 export const CorretoresSection = () => {
   return (
-    <div className="flex flex-col sm:flex-row   bg-pink-500 w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
+    <div className="flex flex-col sm:flex-row   w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
       <CorretorCard
-        creci="78545-DF"
+        creci="25.681-GO"
         name="Carla Martins"
         email="Carlinha Martins"
         phone="5145415154"
       />
       <CorretorCard
-        creci="78545-DF"
-        name="Carla Martins"
+        creci="14.643-GO"
+        name="Jhone Silva"
         email="Carlinha Martins"
         phone="5145415154"
       />
