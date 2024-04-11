@@ -22,12 +22,12 @@ export const CorretorCard = ({ name, creci, phone, email }: CardTipes) => {
         </div>
         <div className=" w-full h-[15%] absolute bottom-0 border-t mx-auto flex justify-center flex-1 items-center gap-x-8">
           {phone && (
-            <span>
+            <span className="rounded-md h-10 w-10 border flex items-center justify-center">
               <FaWhatsapp size={30} />
             </span>
           )}
           {email && (
-            <span>
+            <span className="rounded-md h-10 w-10 border flex items-center justify-center">
               <IoMdMail size={30} />
             </span>
           )}
