@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 type CardImoveisProps = {
   title: string;
@@ -39,7 +38,7 @@ export default function CardImoveis({
         </div>
         <p className="absolute bottom-2 left-2 text-white ">
           A partir de: <br />
-          <span className="text-xl">{valor}</span>
+          <span className="text-xl">R$ {valor} </span>
         </p>
       </div>
       <div className="p-4 flex flex-col gap-2">
