@@ -7,27 +7,29 @@ export const Footer = () => {
   return (
     <footer className="bg-black w-full">
       <div className="max-w-[1200px] flex-col py-3 h-auto mx-auto sm:gap-4  items-center sm:flex-row  min-h-20 text-yellow-600 flex justify-between  text-sm">
-        <Link
+        {/* <Link
           href={"#"}
           className="flex gap-2 items-center justify-center w-fit py-6"
         >
           <FaPhoneFlip size={22} />
           <span>Central de Vendas - 8002-8922</span>
-        </Link>
+        </Link> */}
         <Link
-          href={"#"}
+          href={"mailto:imobiliariamartinssilva@gmail.com"}
+          target="_blank"
           className="flex gap-2 items-center justify-center w-fit py-6"
         >
           <MdEmail size={25} />
-          <span>Atendimento por email - emailteste@gmail.com</span>
+          <span>Atendimento por email - imobiliariamartinssilva@gmail.com</span>
         </Link>
 
         <Link
-          href={"#"}
+          href={"https://wa.me/5561991010404"}
+          target="_blank"
           className="flex gap-2 items-center justify-center w-fit py-6"
         >
           <FaWhatsapp size={25} />
-          <span>Whatsapp - 61 9 0000</span>
+          <span>Whatsapp - 61 99101 0404</span>
         </Link>
       </div>
     </footer>
