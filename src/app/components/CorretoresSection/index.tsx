@@ -7,14 +7,16 @@ export const CorretoresSection = () => {
       <CorretorCard
         creci="25.681-GO"
         name="Carla Martins"
-        email="Carlinha Martins"
-        phone="5145415154"
+        email="imobiliariamartinssilva@gmail.com"
+        phone="61991010404"
+        imgSrc="perfilcarla2.jpeg"
       />
       <CorretorCard
         creci="14.643-GO"
         name="Jhone Silva"
-        email="Carlinha Martins"
-        phone="5145415154"
+        email="imobiliariamartinssilva@gmail.com"
+        phone="61992299329"
+        imgSrc="perfiljhon.jpeg"
       />
     </div>
   );
