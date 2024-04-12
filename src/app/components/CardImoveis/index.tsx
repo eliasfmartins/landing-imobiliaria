@@ -1,13 +1,33 @@
 import Image from "next/image";
-
-export default function CardImoveis() {
+import Link from "next/link";
+type CardImoveisProps = {
+  title: string;
+  imgUrl: string;
+  valor: string;
+  cidade: string;
+  quartos?: string;
+  banheiros?: string;
+  vagas?: string;
+  metragem?: string;
+  link: string;
+};
+export default function CardImoveis({
+  imgUrl,
+  title,
+  valor,
+  cidade,
+  banheiros,
+  metragem,
+  quartos,
+  vagas,
+  link,
+}: CardImoveisProps) {
   return (
     <div className="flex flex-col gap-4 rounded-lg overflow-hidden group shadow-2xl w-[360px]">
       <div className="relative h-[300px] max-h-[300px] w-full  overflow-hidden ">
         <div
           style={{
-            backgroundImage:
-              "linear-gradient(to top, rgba(0, 0, 0, 0.76), transparent), url(/foto.jpg)",
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.76), transparent), url(${imgUrl})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -19,19 +39,21 @@ export default function CardImoveis() {
         </div>
         <p className="absolute bottom-2 left-2 text-white ">
           A partir de: <br />
-          <span className="text-xl">R$ 540.000</span>
+          <span className="text-xl">{valor}</span>
         </p>
       </div>
       <div className="p-4 flex flex-col gap-2">
-        Casa á Venda com 3 quartos, 234m²
-        <p>valparaiso-GO</p>
+        {title}
+        <p>{cidade}</p>
         <div className="flex gap-2">
-          <p>3 Quartos</p>
-          <p>5 Banheiros</p>
-          <p>2 Vagas</p>
-          <p>234m²</p>
+          {quartos && <p>{quartos} Quartos</p>}
+          {banheiros && <p>{banheiros} Banheiros</p>}
+          {vagas && <p>{vagas} Vagas</p>}
+          {metragem && <p>{metragem}m²</p>}
         </div>
-        Mais informações
+        <Link href={link} target="_blank">
+          Mais informações
+        </Link>
       </div>
     </div>
   );
