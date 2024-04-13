@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [navbar, setNavBar] = useState<boolean>(false);
   const [isTop, setIsTop] = useState<boolean>(true);
-  
+
   // Handle screen resize events
   useEffect(() => {
-  const desactivateNavBar = () => setNavBar(false);
+    const desactivateNavBar = () => setNavBar(false);
     window.addEventListener("resize", desactivateNavBar);
     // Cleanup function to remove event listener on component unmount
     return () => window.removeEventListener("resize", desactivateNavBar);
@@ -28,10 +29,9 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isTop]);
 
-
   return (
     <header
-      className={` z-50 w-full fixed  transition-all ease-in-out duration-1000  ${navbar ? " fixed mb-[80px] bg-black" : ""} ${isTop?'bg-transparent-600 ':'bg-black'}`}
+      className={` z-50 w-full fixed  transition-all ease-in-out duration-1000  ${navbar ? " fixed mb-[80px] bg-black" : ""} ${isTop ? "bg-transparent-600 " : "bg-black"}`}
     >
       <div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center  px-4 text-gray-800 max-h-20">
         <Image
@@ -59,36 +59,48 @@ export const Header = () => {
           <ul
             className={`  justify-centertransition-all z-50  transition-all w-full   flex-col  sm:w-auto  sm:flex-row sm:visible sm:flex  sm:gap-1 text-white  font-[700] items-center flex  duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${navbar ? " w-full t h-screen pt-12   bg-black" : "invisible flex transition-all duration-1000"}`}
           >
-            <li
-              className="transition duration-500  hover:bg-yellow-600 rounded-md px-4 py-3  cursor-pointer"
-              onClick={() => setNavBar(false)}
-            >
-              Home
-            </li>
-            <li
-              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
-              onClick={() => setNavBar(false)}
-            >
-              Venda
-            </li>
-            <li
-              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer "
-              onClick={() => setNavBar(false)}
-            >
-              Locação
-            </li>
-            <li
-              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
-              onClick={() => setNavBar(false)}
-            >
-              Quem Somos
-            </li>
-            <li
-              className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
-              onClick={() => setNavBar(false)}
-            >
-              Fale Conosco
-            </li>
+            <Link href={`#inicio`}>
+              <li
+                className="transition duration-500  hover:bg-yellow-600 rounded-md px-4 py-3  cursor-pointer"
+                onClick={() => setNavBar(false)}
+              >
+                Inicio
+              </li>
+            </Link>
+            <Link href={`#about`}>
+              <li
+                className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+                onClick={() => setNavBar(false)}
+              >
+                Quem Somos
+              </li>
+            </Link>
+
+            <Link href={`#vendaaa`}>
+              <li
+                className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+                onClick={() => setNavBar(false)}
+              >
+                Venda
+              </li>
+            </Link>
+            <Link href={`#servicos`}>
+              <li
+                className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer "
+                onClick={() => setNavBar(false)}
+              >
+               Serviços
+              </li>
+            </Link>
+
+            <Link href={`#ondeficamos`}>
+              <li
+                className=" hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+                onClick={() => setNavBar(false)}
+              >
+                Onde nos Encontrar
+              </li>
+            </Link>
           </ul>
         </nav>
       </div>
