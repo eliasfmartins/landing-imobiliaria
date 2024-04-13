@@ -3,7 +3,7 @@ import { CorretorCard } from "../CorretorCard";
 
 export const CorretoresSection = () => {
   return (
-    <div className="flex flex-col sm:flex-row   w-full  max-w-[600px] gap-8 justify-center mx-auto p-8">
+    <div className="flex flex-col sm:flex-row   w-full  max-w-[600px] gap-8 justify-center mx-auto min-h-[450px]">
       <CorretorCard
         creci="25.681-GO"
         name="Carla Martins"
