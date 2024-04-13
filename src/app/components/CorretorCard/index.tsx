@@ -20,10 +20,10 @@ export const CorretorCard = ({
 }: CardTipes) => {
   return (
     <div>
-      <div className="mx-auto  w-[280px] h-[400px] rounded-lg overflow-hidden relative border group shadow-lg hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-5px] hover:shadow-gray-500 ">
+      <div className="mx-auto  w-[280px] h-[400px] rounded-lg overflow-hidden relative border group shadow-lg hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-5px] hover:shadow-gray-500">
         <div className="w-full h-[25%]"></div>
         <div>
-          <div className=" rounded-full h-[155px] w-[155px] mx-auto mt-[-25%] border-4 border-white flex justify-center items-center overflow-hidden">
+          <div className=" rounded-full h-[155px] w-[155px] mx-auto mt-[-25%]  border-white flex justify-center items-center overflow-hidden">
             <Image
               src={`/${imgSrc}`}
               alt="photo"
@@ -32,8 +32,8 @@ export const CorretorCard = ({
               className="w-[150px] h-[150px] rounded-full border-gray-600 border group-hover:scale-125 transition-all duration-700 hover:scale-125"
             />
           </div>
-          <h2 className="mt-8 mx-auto bg-slate-200 text-center text-lg font-[500]">
-            Corretora: {name}
+          <h2 className="mt-8 mx-auto  text-center text-lg font-[500]">
+            Corretor(a): {name}
           </h2>
           <p className="text-center">Creci: {creci}</p>
         </div>
