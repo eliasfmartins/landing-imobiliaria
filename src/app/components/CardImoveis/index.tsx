@@ -51,7 +51,9 @@ export default function CardImoveis({
           {metragem && <p>{metragem}m²</p>}
         </div>
         <Link href={link} target="_blank">
-          Mais informações
+          <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000 mt-4">
+            Mais informações
+          </button>
         </Link>
       </div>
     </div>
