@@ -17,7 +17,7 @@ export const Footer = () => {
         <Link
           href={"mailto:imobiliariamartinssilva@gmail.com"}
           target="_blank"
-          className="flex gap-2 items-center  justify-center sm:justify-normal py-6 w-full sm:w-auto px-4 bg-red-600"
+          className="flex gap-2 items-center  justify-center sm:justify-normal py-6 w-full sm:w-auto px-4"
         >
           <MdEmail size={25} className="flex-shrink-0" />
           <span className="truncate  w-auto overflow-hidden">
