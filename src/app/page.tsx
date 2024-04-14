@@ -29,13 +29,13 @@ export default function Home() {
       >
         <div className="flex flex-col gap-y-6">
           <h2
-            className={`${playfair.className}  text-6xl sm:text-7xl font-[500] text-white max-w-[90%] mx-auto tracking-widest`}
+            className={`${playfair.className}  text-6xl sm:text-7xl font-[500] text-white max-w-[90%]  mx-auto text-center  tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
             Pensando em comprar ou vender?
           </h2>
           <h3
-            className={`${roboto.className} text-4xl font-[200] text-white tracking-widest`}
+            className={`${roboto.className} text-4xl font-[200] text-white tracking-widest max-w-[90%] text-center mx-auto`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
             Os melhores imóveis do Valparaíso e região estão aqui!

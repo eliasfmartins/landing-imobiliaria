@@ -20,7 +20,7 @@ export const CorretorCard = ({
 }: CardTipes) => {
   return (
     <div>
-      <div className="mx-auto  w-[280px] h-[400px] rounded-lg overflow-hidden relative border group shadow-lg hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-5px] hover:shadow-gray-500">
+      <div className="mx-auto w-[80%] sm:w-[300px] h-[400px] rounded-lg overflow-hidden relative border group shadow-lg hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-5px] hover:shadow-gray-500">
         <div className="w-full h-[25%]"></div>
         <div>
           <div className=" rounded-full h-[155px] w-[155px] mx-auto mt-[-25%]  border-white flex justify-center items-center overflow-hidden">
