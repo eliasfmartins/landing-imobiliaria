@@ -14,16 +14,17 @@ export const Footer = () => {
           <FaPhoneFlip size={22} />
           <span>Central de Vendas - 8002-8922</span>
         </Link> */}
-        <Link
-          href={"mailto:imobiliariamartinssilva@gmail.com"}
-          target="_blank"
-          className="flex gap-2 items-center justify-center w-fit py-6"
-        >
-          <span className="text-ellipsis  sm:max-w-full flex justify-center items-center text-center gap-">
-            <MdEmail size={25} />
-            Atendimento por email - imobiliariamartinssilva@gmail.com
-          </span>
-        </Link>
+       <Link
+  href={"mailto:imobiliariamartinssilva@gmail.com"}
+  target="_blank"
+  className="flex gap-2 items-center justify-center py-6 w-full px-4"
+>
+  <MdEmail size={25} className="flex-shrink-0" />
+  <span className="truncate max-w-[90%] overflow-hidden">
+    Atendimento por email - imobiliariamartinssilva@gmail.com
+  </span>
+</Link>
+
 
         <Link
           href={"https://wa.me/5561991010404"}
