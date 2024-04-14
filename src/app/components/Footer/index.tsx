@@ -19,8 +19,10 @@ export const Footer = () => {
           target="_blank"
           className="flex gap-2 items-center justify-center w-fit py-6"
         >
-          <MdEmail size={25} />
-          <span>Atendimento por email - imobiliariamartinssilva@gmail.com</span>
+            <MdEmail size={25} />
+          <span className="text-ellipsis  sm:max-w-full flex justify-center items-center text-center gap-">
+            Atendimento por email - imobiliariamartinssilva@gmail.com
+          </span>
         </Link>
 
         <Link
