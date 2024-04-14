@@ -14,17 +14,16 @@ export const Footer = () => {
           <FaPhoneFlip size={22} />
           <span>Central de Vendas - 8002-8922</span>
         </Link> */}
-       <Link
-  href={"mailto:imobiliariamartinssilva@gmail.com"}
-  target="_blank"
-  className="flex gap-2 items-center justify-center py-6 w-full px-4"
->
-  <MdEmail size={25} className="flex-shrink-0" />
-  <span className="truncate max-w-[90%] overflow-hidden">
-    Atendimento por email - imobiliariamartinssilva@gmail.com
-  </span>
-</Link>
-
+        <Link
+          href={"mailto:imobiliariamartinssilva@gmail.com"}
+          target="_blank"
+          className="flex gap-2 items-center  justify-center sm:justify-normal py-6 w-full sm:w-auto px-4 bg-red-600"
+        >
+          <MdEmail size={25} className="flex-shrink-0" />
+          <span className="truncate  w-auto overflow-hidden">
+            Atendimento por email - imobiliariamartinssilva@gmail.com
+          </span>
+        </Link>
 
         <Link
           href={"https://wa.me/5561991010404"}
@@ -32,7 +31,7 @@ export const Footer = () => {
           className="flex gap-2 items-center justify-center w-fit py-6"
         >
           <FaWhatsapp size={25} />
-          <span>Whatsapp - 61 99101 0404</span>
+          <span className="flex-shrink-0">Whatsapp - 61 99101 0404</span>
         </Link>
       </div>
     </footer>
