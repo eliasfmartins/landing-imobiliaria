@@ -1,4 +1,3 @@
-import { Header } from "./components/Header/index";
 import { playfair } from "./fonts";
 import { roboto } from "./fonts";
 import { Footer } from "./components/Footer";
@@ -10,6 +9,7 @@ import { CardsServices } from "./components/CardsServices";
 import { ImoveisSection } from "./components/ImoveisSection";
 import { About } from "./components/About";
 import { InfoSection } from "./components/InfoSection";
+import { Header } from "./components/Header";
 
 export default function Home() {
   return (
