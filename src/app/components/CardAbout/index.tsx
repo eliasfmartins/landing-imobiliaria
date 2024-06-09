@@ -18,12 +18,11 @@ export const CardAbout = ({
   textBtn,
   title,
 }: CardAboutProps) => {
-  const formattedImgSrc = imgSrc.startsWith("http") ? imgSrc : `/${imgSrc}`;
 
   return (
     <div className="sm:max-w-[280px] text-center flex flex-col justify-between h-full min-h-[350px] max-w-[90%] mx-auto sm:mx-0 rounded-lg  hover:shadow-2xl p-4 transition-all duration-500 hover:mt-[-20px] hover:shadow-gray-500 border">
       <Image
-        src={formattedImgSrc}
+        src={imgSrc?imgSrc:''}
         className="mx-auto mt-4 w-full"
         alt="icon"
         width={100}
