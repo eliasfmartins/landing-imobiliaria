@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 
 export const Header = () => {
 	const [navbar, setNavBar] = useState(false);
-	const [isTop, setIsTop] = useState(true);
 	const { isAuthenticated, logout } = useAuth();
 	const [showLoginModal, setShowLoginModal] = useState(false);
 
@@ -17,14 +16,7 @@ export const Header = () => {
 		return () => window.removeEventListener('resize', desactivateNavBar);
 	}, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsTop(window.scrollY === 0);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	
 
 	const handleLoginClick = () => {
 		setShowLoginModal(true);
@@ -37,12 +29,12 @@ export const Header = () => {
 	return (
 		<>
 			<header
-				className={`z-50 w-full fixed transition-all ease-in-out duration-1000 ${
+				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black ${
 					navbar ? 'fixed mb-[80px] bg-black' : ''
-				} ${isTop ? 'bg-transparent-600' : 'bg-black'}`}
+				}`}
 			>
 				<div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center px-4 text-gray-800 max-h-20">
-					<Link href="/" onClick={()=>setIsTop(false)}>
+					<Link href="/" >
 						<Image
 							src={'/logo.svg'}
 							height={120}
@@ -79,7 +71,7 @@ export const Header = () => {
 									: 'invisible flex transition-all duration-1000'
 							}`}
 						>
-							<Link  href="#inicio "onClick={()=>setIsTop(false)} >
+							<Link  href="/#inicio " >
 								<li
 									className="transition duration-500 hover:bg-yellow-600 rounded-md px-4 py-3 cursor-pointer"
 									onClick={() => setNavBar(false)}
@@ -87,7 +79,7 @@ export const Header = () => {
 									Inicio
 								</li>
 							</Link>
-							<Link href="#about" onClick={()=>setIsTop(false)}>
+							<Link href="/#about" >
 								<li
 									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
 									onClick={() => setNavBar(false)}
@@ -95,7 +87,7 @@ export const Header = () => {
 									Quem Somos
 								</li>
 							</Link>
-							<Link href="#vendaaa" onClick={()=>setIsTop(false)}>
+							<Link href="/imoveis" >
 								<li
 									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
 									onClick={() => setNavBar(false)}
@@ -103,7 +95,7 @@ export const Header = () => {
 									Venda
 								</li>
 							</Link>
-							<Link href="#servicos" onClick={()=>setIsTop(false)}>
+							<Link href="/#servicos" >
 								<li
 									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
 									onClick={() => setNavBar(false)}
@@ -111,10 +103,10 @@ export const Header = () => {
 									Serviços
 								</li>
 							</Link>
-							<Link href="#ondeficamos" >
+							<Link href="/#ondeficamos" >
 								<li
 									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
-									onClick={() =>{setIsTop(false)}}
+									
                   
 								>
 									Onde nos Encontrar
@@ -124,20 +116,15 @@ export const Header = () => {
 								<>
 									<Link href="/cadastrar-imoveis">
 										<li
-											className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+											className="cursor-pointer"
 											onClick={() => setNavBar(false)}
 										>
-											Cadastrar Imóveis
+											<div 	className="h-[20px] w-[20px] bg-yellow-400 rounded-full cursor-pointer">
+
+											</div>
 										</li>
 									</Link>
-									<Link href="/editar-imoveis">
-										<li
-											className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
-											onClick={() => setNavBar(false)}
-										>
-											Editar Imóveis
-										</li>
-									</Link>
+									
 									<div className="flex gap-x-3 items-center">
 										<div
 											className="h-[20px] w-[20px] bg-green-500 rounded-full cursor-pointer"
