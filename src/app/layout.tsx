@@ -3,6 +3,7 @@ import './globals.css';
 import { inter } from './fonts';
 import { AuthProvider } from './context/AuthContext';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 export const metadata: Metadata = {
 	title: 'Imobiliaria Martins & Silva',
@@ -17,7 +18,11 @@ export default function RootLayout({
 	return (
 		<html lang="en" style={{ scrollBehavior: 'smooth' }}>
 			<AuthProvider>
-				<body className={inter.className}>{children}</body>
+				<body className={inter.className}>
+					<Header />
+					{children}
+					<Footer />
+				</body>
 			</AuthProvider>
 		</html>
 	);
