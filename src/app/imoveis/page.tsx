@@ -25,13 +25,13 @@ const ImoveisPage = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:3333/imoveis')
+    fetch('https://imobiliaria-api-nine.vercel.app/imoveis')
       .then(response => response.json())
       .then(data => setImoveis(data.data));
   }, []);
 
   const handleSearch = async () => {
-    const response = await fetch('http://localhost:3333/imoveis/search', {
+    const response = await fetch('https://imobiliaria-api-nine.vercel.app/imoveis/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const ImoveisPage = () => {
   };
 
   return (
-    <div className="container mx-auto pt-6">
+    <div className="container mx-auto pt-6 min-h-[100vh]">
       <h1 className="text-2xl font-bold mb-4">Listagem de Imóveis</h1>
       <div className="mb-4">
         <input

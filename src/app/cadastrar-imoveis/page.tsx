@@ -44,7 +44,7 @@ const CriarImovel = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch('http://localhost:3333/imoveis', {
+    await fetch('https://imobiliaria-api-nine.vercel.app/imoveis', {
       method: 'POST',
       credentials: 'include',
       headers: {

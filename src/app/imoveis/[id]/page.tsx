@@ -25,7 +25,7 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3333/imoveis/${id}`)
+      fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`)
         .then((response) => response.json())
         .then((data) => setImovel(data.data));
     }
@@ -39,7 +39,7 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
         throw new Error('Token not found in cookies');
       }
 
-      const response = await fetch(`http://localhost:3333/imoveis/${id}`, {
+      const response = await fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });

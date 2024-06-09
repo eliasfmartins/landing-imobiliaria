@@ -33,7 +33,7 @@ export default function LoginPage() {
 		setMessageType(null);
 
 		try {
-			const response = await fetch('http://localhost:3333/imoveis/auth', {
+			const response = await fetch('https://imobiliaria-api-nine.vercel.app/imoveis/auth', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
