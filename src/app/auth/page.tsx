@@ -85,7 +85,6 @@ export default function LoginPage() {
 
 	return (
 		<div>
-			<Header />
 			<div className="min-h-screen bg-gray-900 flex items-center justify-center ">
 				<form
 					onSubmit={handleSubmit}
