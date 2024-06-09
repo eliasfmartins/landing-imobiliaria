@@ -1,6 +1,5 @@
 import { playfair } from "./fonts";
 import { roboto } from "./fonts";
-import { Footer } from "./components/Footer";
 import { TitlePage } from "./components/TitlePage";
 import { CardMap } from "./components/CardMap";
 import { CorretoresSection } from "./components/CorretoresSection";
@@ -9,12 +8,11 @@ import { CardsServices } from "./components/CardsServices";
 import { ImoveisSection } from "./components/ImoveisSection";
 import { About } from "./components/About";
 import { InfoSection } from "./components/InfoSection";
-import { Header } from "./components/Header";
+
 
 export default function Home() {
   return (
     <main>
-      <Header />
       <div
         className="flex items-center justify-center text-center "
         style={{
@@ -43,11 +41,11 @@ export default function Home() {
           <div className="w-[300px] bg-yellow-700 h-1 mx-auto rounded-lg mt-2"></div>
         </div>
       </div>
-      <div id="about" className="pt-[80px]">
+      <div id="about">
         <About />
       </div>
       <div className=" max-w-[1200px] mx-auto mt-12">
-        <div id="vendaaa" className="pt-[80px]">
+        <div id="vendaaa" >
           <TitlePage
             firstTitle="Imóveis em destaque"
             subTitle=" Os melhores imóveis á venda você encontra aqui"
@@ -55,7 +53,7 @@ export default function Home() {
           <ImoveisSection />
         </div>
         <LocalSection />
-        <div id="servicos" className="pt-[80px]">
+        <div id="servicos" >
           <TitlePage
             firstTitle="O que nós fazemos?"
             subTitle="Veja alguns dos nossos serviços"
@@ -69,11 +67,10 @@ export default function Home() {
         subTitle="Conheça nosso time de corretores especializados"
       />
       <CorretoresSection />
-      <div className="pt-[80px]" id="ondeficamos">
+      <div id="ondeficamos">
         <CardMap />
       </div>
       <InfoSection />
-      <Footer />
     </main>
   );
 }
