@@ -1,9 +1,10 @@
 'use client';
-import { setCookie } from 'nookies';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { Header } from '../components/Header';
+import Cookies from 'js-cookie'; // Alteração aqui
+
 
 interface LoginResponse {
 	success: boolean;
@@ -47,9 +48,11 @@ export default function LoginPage() {
 			const data: LoginResponse = await response.json();
 
 			if (data.success && data.token) {
-				setCookie(null, 'token', data.token, {
-					maxAge: 86400,
-					path: '/',
+				Cookies.set('token', data.token, { // Alteração aqui
+				  httpOnly: false,
+				  expires: 1, // Alteração aqui (valor em dias)
+				  path: '/imoveis',
+				  secure:false
 				});
 
 				login(data.token);
@@ -58,7 +61,7 @@ export default function LoginPage() {
 
 				const timeout = setTimeout(() => {
 					router.push('/');
-				}, 5000);
+				}, 2000);
 				setRedirectTimeout(timeout);
 			} else {
 				setMessage(data.message);
