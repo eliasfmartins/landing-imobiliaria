@@ -1,5 +1,5 @@
-import { Inter, Angkor, Roboto,Montserrat,Kanit } from "next/font/google";
-export const inter = Inter({ subsets: ["latin"],  display: 'swap', });
+import { Inter, Cormorant_Infant, Cormorant_Unicase} from "next/font/google";
+export const inter = Cormorant_Infant({ subsets: ["latin"], weight:"400" })
 
-export const playfair = Kanit({ subsets: ["latin"],weight:["400","100","500","700","800","900"] });
-export const roboto = Roboto({ subsets: ["latin"], weight:"400" })
+export const playfair = Cormorant_Unicase({ subsets: ["latin"],weight:["300","500","700"] });
+export const roboto = Cormorant_Infant({ subsets: ["latin"], weight:['300',"400","500","600","700"] })

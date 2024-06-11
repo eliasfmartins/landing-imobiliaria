@@ -17,8 +17,8 @@ export const About = () => {
         <h2 className={`w-full text-3xl font-[700] text-center `}>
         Imobiliária Martins e Silva 
         </h2>
-        <h3 className={` w-full text-xl font-[500] text-center`}> Sua Parceira na Realização de Sonhos</h3>
-        <p className="font-extralight text-md text-justify">
+        <h3 className={` w-full text-xl font-[600] text-center`}> Sua Parceira na Realização de Sonhos</h3>
+        <p className="text-md text-justify font-[600]">
           Seja bem-vindo à Martins e Silva Imobiliária, sua nova escolha para encontrar o lar dos seus sonhos. Nossos corretores, com anos de experiência, estão prontos para ajudá-lo a encontrar o imóvel perfeito para você. Trabalhamos tanto com imóveis novos quanto usados e oferecemos um vasto catálogo para atender a diversas necessidades e preferências. Venha nos conhecer e dar o primeiro passo rumo à realização dos seus sonhos.
         </p>
         <Link
