@@ -21,7 +21,7 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (id) {
-      fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`)
         .then(response => response.json())
         .then(data => setImovel(data.data));
     }
@@ -53,7 +53,7 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: {

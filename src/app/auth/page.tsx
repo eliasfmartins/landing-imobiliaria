@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { Header } from '../components/Header';
 import Cookies from 'js-cookie'; // Alteração aqui
 
 
@@ -33,7 +32,7 @@ export default function LoginPage() {
 		setMessageType(null);
 
 		try {
-			const response = await fetch('https://imobiliaria-api-nine.vercel.app/imoveis/auth', {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/auth`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

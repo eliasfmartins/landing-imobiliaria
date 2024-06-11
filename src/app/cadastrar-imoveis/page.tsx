@@ -44,7 +44,16 @@ const CriarImovel = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch('https://imobiliaria-api-nine.vercel.app/imoveis', {
+
+    // Validação simples
+    if (!imovel.title || !imovel.description || !imovel.value || !imovel.city || !imovel.rooms) {
+      console.error("Todos os campos obrigatórios devem ser preenchidos.");
+      return;
+    }
+
+    console.log("Enviando dados:", imovel); // Log dos dados enviados
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -52,7 +61,15 @@ const CriarImovel = () => {
       },
       body: JSON.stringify(imovel)
     });
-    router.push('/imoveis');
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Erro na resposta do servidor:", errorData); // Log do erro da resposta
+    } else {
+      const data = await response.json();
+      console.log("Resposta do servidor:", data); // Log da resposta do servidor
+      router.push('/imoveis');
+    }
   };
 
   return (

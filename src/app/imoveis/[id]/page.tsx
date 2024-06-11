@@ -25,7 +25,7 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (id) {
-      fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`)
         .then((response) => response.json())
         .then((data) => setImovel(data.data));
     }
@@ -35,22 +35,28 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
     try {
       const cookies = parseCookies();
       const token = cookies.token;
+      console.log(token)
       if (!token) {
         throw new Error('Token not found in cookies');
       }
 
-      const response = await fetch(`https://imobiliaria-api-nine.vercel.app/imoveis/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`, {
         method: 'DELETE',
         credentials: 'include',
+        headers: {
+          // Você pode remover esse cabeçalho se não for necessário
+        'Cookie': `token=${token}`
+        }
       });
 
       if (!response.ok) {
+        console.error('Error deleting resource:', response);
         throw new Error('Failed to delete resource');
       }
 
       router.push('/imoveis');
     } catch (error : any) {
-      console.error('Error deleting resource:', error.message);
+      console.error('Error deleting resource:', error);
     }
   };
 
