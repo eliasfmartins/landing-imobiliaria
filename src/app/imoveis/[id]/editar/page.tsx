@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { parseCookies } from 'nookies';
 import { useEffect, useState, ChangeEvent, KeyboardEvent, FormEvent } from 'react';
 
 const EditarImovel = ({ params }: { params: { id: string } }) => {
@@ -53,13 +54,16 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const cookies = parseCookies();
+    const token = cookies.token;
     await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization':`${token}`,
       },
-      body: JSON.stringify(imovel)
+      body:JSON.stringify(imovel)
     });
     router.push(`/imoveis/${id}`);
   };

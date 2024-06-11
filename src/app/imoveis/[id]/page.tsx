@@ -44,8 +44,8 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
         method: 'DELETE',
         credentials: 'include',
         headers: {
-          // Você pode remover esse cabeçalho se não for necessário
-        'Cookie': `token=${token}`
+        'Content-Type': 'application/json',
+        'Authorization': `${token}`,
         }
       });
 

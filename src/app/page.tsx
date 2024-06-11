@@ -27,7 +27,7 @@ export default function Home() {
       >
         <div className="flex flex-col gap-y-6">
           <h2
-            className={`${playfair.className}  text-6xl sm:text-7xl font-[500] text-white max-w-[90%]  mx-auto text-center  tracking-widest`}
+            className={`${playfair.className}  text-6xl sm:text-7xl font-[600] text-white max-w-[90%]  mx-auto text-center  tracking-widest`}
             style={{ textShadow: "5px 1px 4px rgba(0, 0, 0, 0.5)" }}
           >
             Pensando em comprar ou vender?

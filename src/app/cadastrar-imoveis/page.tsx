@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { parseCookies } from 'nookies';
 import { useState, ChangeEvent, KeyboardEvent, FormEvent } from 'react';
 
 const CriarImovel = () => {
@@ -52,12 +53,14 @@ const CriarImovel = () => {
     }
 
     console.log("Enviando dados:", imovel); // Log dos dados enviados
-
+    const cookies = parseCookies();
+    const token = cookies.token;
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis`, {
       method: 'POST',
       credentials: 'include',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization':`${token}`,
       },
       body: JSON.stringify(imovel)
     });
