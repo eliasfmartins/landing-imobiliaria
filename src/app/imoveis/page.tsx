@@ -1,19 +1,9 @@
 'use client';
 import { useEffect, useState, ChangeEvent } from 'react';
 import CardImoveis from '../components/CardImoveis';
+import { Imovel } from '@/api/imoveis';
 
-type Imovel = {
-  id: string;
-  title: string;
-  description: string;
-  images: string[];
-  value: string;
-  rooms: string;
-  city: string;
-  bathrooms?: string;
-  garages?: string;
-  area?: string;
-};
+
 
 const ImoveisPage = () => {
   const [imoveis, setImoveis] = useState<Imovel[]>([]);
