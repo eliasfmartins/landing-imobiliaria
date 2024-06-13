@@ -4,6 +4,8 @@ import { useAuth } from '@/app/context/AuthContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaRegEdit, FaWindowClose } from 'react-icons/fa';
+import { FaCircleUser } from 'react-icons/fa6';
 
 export const Header = () => {
 	const [navbar, setNavBar] = useState(false);
@@ -15,8 +17,6 @@ export const Header = () => {
 		window.addEventListener('resize', desactivateNavBar);
 		return () => window.removeEventListener('resize', desactivateNavBar);
 	}, []);
-
-	
 
 	const handleLoginClick = () => {
 		setShowLoginModal(true);
@@ -34,7 +34,7 @@ export const Header = () => {
 				}`}
 			>
 				<div className="mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full">
-					<Link href="/" >
+					<Link href="/">
 						<Image
 							src={'/logo.svg'}
 							height={120}
@@ -71,7 +71,7 @@ export const Header = () => {
 									: 'invisible flex transition-all duration-1000'
 							}`}
 						>
-							<Link  href="/#inicio " className='h-full' >
+							<Link href="/#inicio " className="h-full">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
@@ -79,7 +79,7 @@ export const Header = () => {
 									Inicio
 								</li>
 							</Link>
-							<Link href="/#about" >
+							<Link href="/#about">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
@@ -87,15 +87,15 @@ export const Header = () => {
 									Quem Somos
 								</li>
 							</Link>
-							<Link href="/imoveis" >
+							<Link href="/imoveis">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
-									Venda
+									Imoveis
 								</li>
 							</Link>
-							<Link href="/#servicos" >
+							<Link href="/#servicos">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
@@ -103,12 +103,10 @@ export const Header = () => {
 									Serviços
 								</li>
 							</Link>
-							<Link href="/#ondeficamos" >
+							<Link href="/#ondeficamos">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
-									
-                  
 								>
 									Onde nos Encontrar
 								</li>
@@ -120,25 +118,29 @@ export const Header = () => {
 											className="cursor-pointer"
 											onClick={() => setNavBar(false)}
 										>
-											<div 	className="h-[20px] w-[20px] bg-yellow-400 rounded-full cursor-pointer">
-
+											<div className="h-[25px] w-[25px]rounded-full cursor-pointer">
+											<FaRegEdit size={25}/>
 											</div>
 										</li>
 									</Link>
-									
+
 									<div className="flex gap-x-3 items-center">
 										<div
-											className="h-[20px] w-[20px] bg-green-500 rounded-full cursor-pointer"
+											className="h-[25px] w-[25px] rounded-full cursor-pointer"
 											onClick={logout}
-										></div>
+										>
+											{isAuthenticated ? <FaWindowClose size={25}/>: <FaCircleUser size={25}  />}
+										</div>
 									</div>
 								</>
 							) : (
 								<div className="flex items-center">
 									<div
-										className="h-[20px] w-[20px] bg-red-500 rounded-full cursor-pointer"
+										className="h-[25px] w-[25px] rounded-full cursor-pointer"
 										onClick={handleLoginClick}
-									></div>
+									>
+										<FaCircleUser size={25} />
+									</div>
 								</div>
 							)}
 						</ul>
@@ -149,7 +151,7 @@ export const Header = () => {
 				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
 					<div className="bg-gray-700 p-8 rounded shadow-lg">
 						<h2 className="text-2xl mb-4 text-white">Login</h2>
-						<div className=' gap-3 flex items-center justify-center'>
+						<div className=" gap-3 flex items-center justify-center">
 							<Link href="/auth" onClick={closeModal}>
 								<button className="bg-blue-500 text-white px-3 py-3 rounded">
 									Ir para página de login
