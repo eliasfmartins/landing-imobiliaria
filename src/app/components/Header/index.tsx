@@ -29,11 +29,11 @@ export const Header = () => {
 	return (
 		<>
 			<header
-				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black ${
+				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black py-1${
 					navbar ? 'fixed mb-[80px] bg-black' : ''
 				}`}
 			>
-				<div className="mx-auto max-w-[1200px] bg-transparent flex justify-between py-4 items-center px-4 text-gray-800 max-h-20">
+				<div className="mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full">
 					<Link href="/" >
 						<Image
 							src={'/logo.svg'}
@@ -71,9 +71,9 @@ export const Header = () => {
 									: 'invisible flex transition-all duration-1000'
 							}`}
 						>
-							<Link  href="/#inicio " >
+							<Link  href="/#inicio " className='h-full' >
 								<li
-									className="transition duration-500 hover:bg-yellow-600 rounded-md px-4 py-3 cursor-pointer"
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
 									Inicio
@@ -81,7 +81,7 @@ export const Header = () => {
 							</Link>
 							<Link href="/#about" >
 								<li
-									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
 									Quem Somos
@@ -89,7 +89,7 @@ export const Header = () => {
 							</Link>
 							<Link href="/imoveis" >
 								<li
-									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
 									Venda
@@ -97,7 +97,7 @@ export const Header = () => {
 							</Link>
 							<Link href="/#servicos" >
 								<li
-									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
 									Serviços
@@ -105,7 +105,8 @@ export const Header = () => {
 							</Link>
 							<Link href="/#ondeficamos" >
 								<li
-									className="hover:bg-yellow-600 rounded-md transition duration-500 px-4 py-3 cursor-pointer"
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
+									onClick={() => setNavBar(false)}
 									
                   
 								>
