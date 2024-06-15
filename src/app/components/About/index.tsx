@@ -5,15 +5,27 @@ import React from "react";
 
 export const About = () => {
   return (
-    <div className="min-h-[35vh] xl:flex max-w-[1200px] mx-auto">
-      <div className="flex flex-col space-y-10  mt-7  p-4  h-fit xl:items-start items-center">
-      <Image
+    <div className="min-h-[35vh] xl:flex mx-auto"  style={{
+      backgroundImage:
+        "linear-gradient(to bottom,#00000088, #020202 ), url(/house.jpg)",
+      filter: "brightness(150%)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      minHeight :`100vh`,
+      display: "flex",
+      alignItems:'center',
+      justifyContent:"center",
+      color:'#fff'
+      
+    }}>
+      <div className="flex flex-col space-y-10  mt-7  p-4 justify-center items-center max-w-[1200px] mx-auto h-full" >
+      {/* <Image
         width={1200}
         height={1200}
         alt=""
         src={"/roof.svg"}
         className=" z-10  flex flex-1 w-[90%] mx-auto"
-      />
+      /> */}
         <h2 className={`w-full text-3xl font-[700] text-center `}>
         Imobiliária Martins e Silva 
         </h2>
