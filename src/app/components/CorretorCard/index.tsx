@@ -24,13 +24,13 @@ export const CorretorCard = ({
         <div className="w-full h-[25%]"></div>
         <div>
           <div className=" rounded-full h-[155px] w-[155px] mx-auto mt-[-25%]  border-white flex justify-center items-center overflow-hidden">
-            <Image
+            {/* <Image
               src={`/${imgSrc}`}
               alt="photo"
               width={155}
               height={155}
               className="w-[150px] h-[150px] rounded-full border-gray-600 border group-hover:scale-125 transition-all duration-700 hover:scale-125"
-            />
+            /> */}
           </div>
           <h2 className="mt-8 mx-auto  text-center text-lg font-[500]">
             Corretor(a): {name}

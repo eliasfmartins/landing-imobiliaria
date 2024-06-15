@@ -80,20 +80,21 @@ export const Header = () => {
 									Inicio
 								</li>
 							</Link>
-							<Link href="/#about">
-								<li
-									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
-									onClick={() => setNavBar(false)}
-								>
-									Quem Somos
-								</li>
-							</Link>
+							
 							<Link href="/imoveis">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
 								>
 									Imoveis
+								</li>
+							</Link>
+							<Link href="/#about">
+								<li
+									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
+									onClick={() => setNavBar(false)}
+								>
+									Quem Somos
 								</li>
 							</Link>
 							<Link href="/#servicos">
