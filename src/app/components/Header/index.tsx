@@ -119,8 +119,11 @@ export const Header = () => {
 											className="cursor-pointer"
 											onClick={() => setNavBar(false)}
 										>
-											<div className="h-[25px] w-[25px]rounded-full cursor-pointer" title='Cadastrar Imóvel'>
-											<FaRegEdit size={25}/>
+											<div
+												className="h-[25px] w-[25px]rounded-full cursor-pointer"
+												title="Cadastrar Imóvel"
+											>
+												<FaRegEdit size={25} />
 											</div>
 										</li>
 									</Link>
@@ -130,7 +133,11 @@ export const Header = () => {
 											className="h-[25px] w-[25px] rounded-full cursor-pointer"
 											onClick={logout}
 										>
-											{isAuthenticated && <div title='Sair'><IoMdLogOut  size={25}/></div>}
+											{isAuthenticated && (
+												<div title="Sair">
+													<IoMdLogOut size={25} />
+												</div>
+											)}
 										</div>
 									</div>
 								</>
@@ -138,7 +145,8 @@ export const Header = () => {
 								<div className="flex items-center">
 									<div
 										className="h-[25px] w-[25px] rounded-full cursor-pointer"
-										onClick={handleLoginClick} title='Login'
+										onClick={handleLoginClick}
+										title="Login"
 									>
 										<FaCircleUser size={25} />
 									</div>

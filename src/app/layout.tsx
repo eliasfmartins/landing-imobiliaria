@@ -16,9 +16,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" style={{ scrollBehavior: 'smooth' }}>
+		<html lang="pt-BR" style={{ scrollBehavior: 'smooth' }}>
 			<AuthProvider>
-				<body className={inter.className}>
+				<body className={`${inter.className}`} >
 					<Header />
 					{children}
 					<Footer />
