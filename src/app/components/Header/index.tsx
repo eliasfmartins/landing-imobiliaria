@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaRegEdit, FaWindowClose } from 'react-icons/fa';
 import { FaCircleUser } from 'react-icons/fa6';
+import { IoMdLogOut } from 'react-icons/io';
 
 export const Header = () => {
 	const [navbar, setNavBar] = useState(false);
@@ -118,7 +119,7 @@ export const Header = () => {
 											className="cursor-pointer"
 											onClick={() => setNavBar(false)}
 										>
-											<div className="h-[25px] w-[25px]rounded-full cursor-pointer">
+											<div className="h-[25px] w-[25px]rounded-full cursor-pointer" title='Cadastrar Imóvel'>
 											<FaRegEdit size={25}/>
 											</div>
 										</li>
@@ -129,7 +130,7 @@ export const Header = () => {
 											className="h-[25px] w-[25px] rounded-full cursor-pointer"
 											onClick={logout}
 										>
-											{isAuthenticated ? <FaWindowClose size={25}/>: <FaCircleUser size={25}  />}
+											{isAuthenticated && <div title='Sair'><IoMdLogOut  size={25}/></div>}
 										</div>
 									</div>
 								</>
@@ -137,7 +138,7 @@ export const Header = () => {
 								<div className="flex items-center">
 									<div
 										className="h-[25px] w-[25px] rounded-full cursor-pointer"
-										onClick={handleLoginClick}
+										onClick={handleLoginClick} title='Login'
 									>
 										<FaCircleUser size={25} />
 									</div>
