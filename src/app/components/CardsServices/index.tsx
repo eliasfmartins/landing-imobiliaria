@@ -4,7 +4,7 @@ import { CardAbout } from '../CardAbout'
 export const CardsServices = () => {
   return (
     <div className=" max-w-[1200px] mx-auto mt-0">
-        <div className=" mt-[80px] flex justify-between items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
+        <div className=" mt-[80px] flex justify-evenly items-center w-full flex-wrap mb-[80px] p-4 gap-y-12">
           <CardAbout
           imgSrc="simule.svg"
           subTitle="Faça uma simulação de crédito para a compra do seu novo imóvel."
