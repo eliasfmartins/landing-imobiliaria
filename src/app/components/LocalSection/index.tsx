@@ -8,8 +8,8 @@ export const LocalSection = () => {
         firstTitle="Imóveis por região"
         // subTitle="A localização de alguns dos nossos imóveis temos imoveis"
       />
-      <div className=" flex w-full justify-between flex-wrap gap-8 my-12 ">
-        <ul className="min-w-[250px] w-[90%] sm:w-[20%] text-center flex flex-col gap-3">
+      <div className=" flex-col sm:flex-row flex w-full sm:justify-evenly flex-wrap my-12  justify-center gap-8 items-center">
+        <ul className="min-w-[250px] w-[90%] sm:w-[20%] text-center flex flex-col gap-4">
           <h3 className="text-lg font-[500]">Valparaiso-GO</h3>
           <li>Céu Azul</li>
           <li>Valparaiso I</li>
