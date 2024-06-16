@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 export const Footer = () => {
   return (
     <footer className="bg-black w-full">
-      <div className="max-w-[1200px] flex-col py-3 h-auto mx-auto sm:gap-4  items-center sm:flex-row  min-h-20 text-yellow-600 flex justify-between  text-sm">
+      <div className="max-w-[1200px] flex-col py-3 h-auto mx-auto  flex-wrap sm:gap-3  items-center sm:flex-row  min-h-20 text-yellow-600 flex justify-center md:justify-between  text-sm  ">
         {/* <Link
           href={"#"}
           className="flex gap-2 items-center justify-center w-fit py-6"
@@ -17,7 +17,7 @@ export const Footer = () => {
         <Link
           href={"mailto:imobiliariamartinssilva@gmail.com"}
           target="_blank"
-          className="flex gap-2 items-center  justify-center sm:justify-normal py-6 w-full sm:w-auto px-4"
+          className="flex gap-2  items-center text-center sm:text-start justify-center sm:justify-normal py-6 w-full sm:w-auto px-4"
         >
           <MdEmail size={25} className="flex-shrink-0" />
           <span className="truncate  w-auto overflow-hidden">
@@ -28,7 +28,7 @@ export const Footer = () => {
         <Link
           href={"https://wa.me/5561991010404"}
           target="_blank"
-          className="flex gap-2 items-center justify-center w-fit py-6"
+          className="flex gap-2 items-center justify-center w-fit p-6"
         >
           <FaWhatsapp size={25} />
           <span className="flex-shrink-0">Whatsapp - 61 99101 0404</span>
