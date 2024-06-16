@@ -13,13 +13,14 @@ export default function Home() {
 	return (
 		<main>
 			<div
-				className="flex items-center justify-center text-center "
+				className="flex items-center justify-center text-center paralax"
 				style={{
 					backgroundImage:
-						'linear-gradient(to bottom, #000000eb, #000000da), url(/tower.jpg)',
+						'linear-gradient(to bottom, #00000076, #000000eb), url(/tower.jpg)',
 					filter: 'brightness(150%)',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', // Isso cria o efeito de parallax
 					height: 'calc(100vh )',
 				}}
 				id="inicio"

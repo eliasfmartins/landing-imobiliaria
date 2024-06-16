@@ -27,3 +27,16 @@
   ::-webkit-scrollbar-button {
     display: none; /* Oculta o símbolo do scroll */
   }
+  /* globals.css */
+.parallax {
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+.parallax::before {
+	content: '';
+	display: block;
+	height: 100vh;
+	background: linear-gradient(to bottom, #00000088, #020202);
+}

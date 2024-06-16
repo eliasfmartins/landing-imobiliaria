@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaUserCircle } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 
@@ -31,6 +32,7 @@ export const CorretorCard = ({
               height={155}
               className="w-[150px] h-[150px] rounded-full border-gray-600 border group-hover:scale-125 transition-all duration-700 hover:scale-125"
             /> */}
+            <FaUserCircle size={75} />
           </div>
           <h2 className="mt-8 mx-auto  text-center text-lg font-[500]">
             Corretor(a): {name}

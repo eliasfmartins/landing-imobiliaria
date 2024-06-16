@@ -10,29 +10,21 @@ export const About = () => {
 			style={{
 				backgroundImage:
 					'linear-gradient(to bottom,#00000088, #020202 ), url(/house.jpg)',
-				// filter: 'brightness(150%)',
+				backgroundAttachment: 'fixed', // Isso cria o efeito de parallax
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
-				minHeight: `100vh`,
+				minHeight: '100vh',
 				display: 'flex',
 				alignItems: 'center',
 				justifyContent: 'center',
 				color: '#fff',
 			}}
 		>
-			<div className="flex flex-col space-y-10  mt-7  p-4 justify-center items-center max-w-[1200px] mx-auto h-full">
-				{/* <Image
-        width={1200}
-        height={1200}
-        alt=""
-        src={"/roof.svg"}
-        className=" z-10  flex flex-1 w-[90%] mx-auto"
-      /> */}
-				<h2 className={`w-full text-5xl font-[700] text-center `}>
+			<div className="flex flex-col space-y-10 mt-7 p-4 paralax justify-center items-center max-w-[1200px] mx-auto h-full">
+				<h2 className={`w-full text-5xl font-[700] text-center`}>
 					Imobiliária Martins e Silva
 				</h2>
-				<h3 className={` w-full text-3xl font-[600] text-center`}>
-					{' '}
+				<h3 className={`w-full text-3xl font-[600] text-center`}>
 					Sua Parceira na Realização de Sonhos
 				</h3>
 				<p className="text-lg text-justify font-[600]">
@@ -46,7 +38,7 @@ export const About = () => {
 				</p>
 				<Link
 					href="#vendaaa"
-					className="border-2 border-yellow-600 w-fit px-8 py-3 font-[700] text-yellow-600 hover:bg-yellow-600 hover:text-white transition-all ease-in-out  rounded mx-auto"
+					className="border-2 border-yellow-600 w-fit px-8 py-3 font-[700] text-yellow-600 hover:bg-yellow-600 hover:text-white transition-all ease-in-out rounded mx-auto"
 				>
 					Veja Alguns dos Nossos Imóveis
 				</Link>
