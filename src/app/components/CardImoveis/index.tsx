@@ -22,7 +22,7 @@ export default function CardImoveis({
   link,
 }: CardImoveisProps) {
   return (
-    <div className="flex flex-col gap-4 rounded-lg overflow-hidden group shadow-2xl w-[360px]">
+    <div className="flex flex-col gap-4 rounded-lg overflow-hidden group shadow-2xl w-[300px] my-4">
       <div className="relative h-[300px] max-h-[300px] w-full  overflow-hidden ">
         <div
           style={{
@@ -50,7 +50,7 @@ export default function CardImoveis({
           {vagas && <p>{vagas} Vagas</p>}
           {metragem && <p>{metragem}m²</p>}
         </div>
-        <Link href={link} target="_blank">
+        <Link href={link}>
           <button className="w-full rounded-md bg-yellow-600 text-white p-5 hover:brightness-125 transition-all duration-1000 mt-4">
             Mais informações
           </button>
@@ -59,3 +59,4 @@ export default function CardImoveis({
     </div>
   );
 }
+
