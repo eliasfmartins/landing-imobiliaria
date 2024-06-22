@@ -31,10 +31,12 @@ export const Header = () => {
 		<>
 			<header
 				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black py-1${
-					navbar ? 'fixed mb-[80px] bg-black' : ''
+					navbar ? 'fixed mb-[80px] bg-black' : 'bg-red-500'
 				}`}
 			>
-				<div className="mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full">
+				<div
+					className={`mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full bg-red-500`}
+				>
 					<Link href="/">
 						<Image
 							src={'/logo.svg'}
@@ -66,13 +68,13 @@ export const Header = () => {
 							/>
 						</button>
 						<ul
-							className={`justify-center transition-all z-50 transition-all w-full flex-col sm:w-auto sm:flex-row sm:visible sm:flex sm:gap-1 text-white font-[700] items-center flex duration-1000 overflow-hidden top-[80px] right-0 left-0 justify-start gap-9 fixed h-0 sm:h-auto sm:static ${
+							className={` transition-all z-50 transition-all w-full flex-col sm:w-auto sm:flex-row sm:visible sm:flex sm:gap-1 text-white font-[700] items-center flex duration-1000 overflow-hidden top-[45px] right-0 left-0 justify-start gap-6 fixed h-0 sm:h-auto sm:static ${
 								navbar
 									? 'w-full h-screen pt-12 bg-black'
 									: 'invisible flex transition-all duration-1000'
 							}`}
 						>
-							<Link href="/#inicio " className="h-full">
+							<Link href="/#inicio ">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
 									onClick={() => setNavBar(false)}
@@ -80,7 +82,7 @@ export const Header = () => {
 									Inicio
 								</li>
 							</Link>
-							
+
 							<Link href="/imoveis">
 								<li
 									className="transition duration-500 hover:border-b-2 py-2 hover:border-yellow-600  px-4  cursor-pointer h-[100%] border-b-2 border-b-transparent"
