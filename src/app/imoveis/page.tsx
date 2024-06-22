@@ -81,7 +81,7 @@ const ImoveisPage = () => {
 					Buscar
 				</button>
 			</div>
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+			<div className="flex justify-center items-center flex-wrap gap-4">
 				{imoveis.map((imovel) => (
 					<CardImoveis
 						key={imovel.id}
