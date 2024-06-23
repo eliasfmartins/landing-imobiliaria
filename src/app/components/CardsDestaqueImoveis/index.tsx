@@ -10,7 +10,7 @@ type CardImoveisProps = {
   metragem?: string;
   link: string;
 };
-export default function CardImoveis({
+export default function CardDestaqueImoveis({
   imgUrl,
   title,
   valor,
@@ -22,7 +22,7 @@ export default function CardImoveis({
   link,
 }: CardImoveisProps) {
   return (
-    <div className="flex flex-col gap-4 rounded-lg overflow-hidden group shadow-2xl w-[300px] my-4 border border-gray-400">
+    <div className="flex flex-col gap-4 rounded-lg overflow-hidden group shadow-2xl w-[360px] my-4">
       <div className="relative h-[300px] max-h-[300px] w-full  overflow-hidden ">
         <div
           style={{
@@ -41,13 +41,10 @@ export default function CardImoveis({
           <span className="text-xl">R$ {valor} </span>
         </p>
       </div>
-      <div className="p-4 flex flex-col gap-2 ">
-        <span className="text-xl">
-
+      <div className="p-4 flex flex-col gap-2">
         {title}
-        </span>
         <p>{cidade}</p>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2">
           {quartos && <p>{quartos} Quartos</p>}
           {banheiros && <p>{banheiros} Banheiros</p>}
           {vagas && <p>{vagas} Vagas</p>}
