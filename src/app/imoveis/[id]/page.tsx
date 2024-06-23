@@ -61,29 +61,29 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
   };
 
   if (!imovel) {
-    return <div>Loading...</div>;
+    return <div className=' min-h-[82.8vh]'>Loading...</div>;
   }
 
   return (
-    <div className="container mx-auto pt-36">
+    <div className="container mx-auto pt-36  min-h-[82.8vh]">
       <h1 className="text-2xl font-bold mb-4">{imovel.title}</h1>
       <Carousel
         responsive={{
           superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
-            items: 1,
+            items: 3,
           },
           desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 1,
+            items: 2,
           },
           tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 1,
+            items: 2,
           },
           mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1,
+            items: 2,
           },
         }}
       >
@@ -115,6 +115,13 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
           >
             Deletar
           </button>
+          <button
+            onClick={()=>router.back()}
+            className="bg-gray-400 text-white p-2 rounded"
+          >
+            Voltar
+          </button>
+
         </div>
       )}
     </div>
