@@ -42,7 +42,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className=" max-w-[1200px] mx-auto mt-12">
+			<div className=" max-w-[1400px] mx-auto mt-12">
 				<div id="vendaaa">
 					<TitlePage
 						firstTitle="Imóveis em destaque"
