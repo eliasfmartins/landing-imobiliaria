@@ -30,12 +30,12 @@ export const Header = () => {
 	return (
 		<>
 			<header
-				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black py-1${
-					navbar ? 'fixed mb-[80px] bg-black' : 'bg-red-500'
+				className={`z-50 w-full  transition-all ease-in-out duration-1000  bg-black p-2  ${
+					navbar?'fixed ' : 'fixed'
 				}`}
 			>
 				<div
-					className={`mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full bg-red-500`}
+					className={`mx-auto max-w-[1200px] bg-transparent flex justify-between  items-center px-4 text-gray-800 max-h-20 h-full`}
 				>
 					<Link href="/">
 						<Image
@@ -68,7 +68,7 @@ export const Header = () => {
 							/>
 						</button>
 						<ul
-							className={` transition-all z-50 transition-all w-full flex-col sm:w-auto sm:flex-row sm:visible sm:flex sm:gap-1 text-white font-[700] items-center flex duration-1000 overflow-hidden top-[45px] right-0 left-0 justify-start gap-6 fixed h-0 sm:h-auto sm:static ${
+							className={` transition-all z-50 transition-all w-full flex-col sm:w-auto sm:flex-row sm:visible sm:flex sm:gap-1 text-white font-[700] items-center flex duration-1000 overflow-hidden top-[60px] right-0 left-0 justify-start gap-6 fixed h-0 sm:h-auto sm:static ${
 								navbar
 									? 'w-full h-screen pt-12 bg-black'
 									: 'invisible flex transition-all duration-1000'
