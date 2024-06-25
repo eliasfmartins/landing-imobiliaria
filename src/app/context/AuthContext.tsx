@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { setCookie, parseCookies, destroyCookie } from 'nookies';
+import { useRouter } from 'next/navigation';
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -15,6 +16,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const cookies = parseCookies();
@@ -23,12 +25,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (token) {
       setIsAuthenticated(true);
       setToken(token);
+    } else {
+      router.push('/login');
     }
-  }, []);
+  }, [router]);
 
   const login = (token: string) => {
     setCookie(null, 'token', token, {
-      maxAge: 60 * 60 * 24 * 7, // 7 dias
+      maxAge: 60 * 60 * 24, // 1 dia
       path: '/',
       sameSite: 'lax',
     });
@@ -40,6 +44,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     destroyCookie(null, 'token');
     setToken(null);
     setIsAuthenticated(false);
+    router.push('/login');
   };
 
   return (
