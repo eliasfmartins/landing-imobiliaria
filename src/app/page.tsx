@@ -20,7 +20,7 @@ export default function Home() {
 					filter: 'brightness(150%)',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-          backgroundAttachment: 'fixed', // Isso cria o efeito de parallax
+					backgroundAttachment: 'fixed', // Isso cria o efeito de parallax
 					height: 'calc(100vh )',
 				}}
 				id="inicio"
@@ -50,11 +50,11 @@ export default function Home() {
 					/>
 					<ImoveisSection />
 				</div>
-        </div>
-				<div id="about" className='w-full'>
-					<About />
-				</div>
-        <div className=" max-w-[1200px] mx-auto mt-12">
+			</div>
+			<div id="about" className='w-full'>
+				<About />
+			</div>
+			<div className=" max-w-[1200px] mx-auto mt-12">
 				<LocalSection />
 				<div id="servicos">
 					<TitlePage

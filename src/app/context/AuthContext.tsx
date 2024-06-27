@@ -18,17 +18,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    const cookies = parseCookies();
-    const token = cookies.token;
+  // useEffect(() => {
+  //   const cookies = parseCookies();
+  //   const token = cookies.token;
 
-    if (token) {
-      setIsAuthenticated(true);
-      setToken(token);
-    } else {
-      router.push('/login');
-    }
-  }, [router]);
+  //   if (token) {
+  //     setIsAuthenticated(true);
+  //     setToken(token);
+  //   } else {
+  //     router.push('/login');
+  //   }
+  // }, [router]);
 
   const login = (token: string) => {
     setCookie(null, 'token', token, {
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     destroyCookie(null, 'token');
     setToken(null);
     setIsAuthenticated(false);
-    router.push('/login');
+    router.push('/auth');
   };
 
   return (

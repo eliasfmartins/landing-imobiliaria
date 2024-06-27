@@ -48,10 +48,10 @@ export default function LoginPage() {
 
 			if (data.success && data.token) {
 				Cookies.set('token', data.token, { // Alteração aqui
-				  httpOnly: false,
-				  expires: 1, // Alteração aqui (valor em dias)
-				  path: '/imoveis',
-				  secure:false
+					httpOnly: false,
+					expires: 1, // Alteração aqui (valor em dias)
+					path: '/imoveis',
+					secure: false
 				});
 
 				login(data.token);
@@ -92,9 +92,8 @@ export default function LoginPage() {
 					<h1 className="text-2xl font-semibold mb-4 text-white">Login</h1>
 					{message && (
 						<div
-							className={`p-2 mb-4 text-white ${
-								messageType === 'success' ? 'bg-green-500' : 'bg-red-500'
-							}`}
+							className={`p-2 mb-4 text-white ${messageType === 'success' ? 'bg-green-500' : 'bg-red-500'
+								}`}
 						>
 							{message}
 						</div>
