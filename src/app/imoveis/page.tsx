@@ -58,7 +58,7 @@ const ImoveisPage = () => {
 					onChange={handleInputChange}
 					className="border p-2 mr-2"
 				/>
-				<input
+				{/* <input
 					type="text"
 					name="minValue"
 					placeholder="Valor Mínimo"
@@ -73,7 +73,7 @@ const ImoveisPage = () => {
 					value={searchParams.maxValue}
 					onChange={handleInputChange}
 					className="border p-2 mr-2"
-				/>
+				/> */}
 				<button
 					onClick={handleSearch}
 					className="bg-blue-500 text-white p-2 rounded"
