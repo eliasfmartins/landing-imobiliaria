@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR" style={{ scrollBehavior: 'smooth' }}>
 			<AuthProvider>
-				<body className={`${inter.className}`} >
+				<body className={`${inter.className} font-normal`} >
 					<Header />
 					{children}
 					<Footer />

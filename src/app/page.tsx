@@ -12,8 +12,9 @@ import { InfoSection } from './components/InfoSection';
 export default function Home() {
 	return (
 		<main>
+			
 			<div
-				className="flex items-center justify-center text-center paralax"
+				className="flex items-center justify-center text-center paralax font-[400]"
 				style={{
 					backgroundImage:
 						'linear-gradient(to bottom, #00000076, #000000eb), url(/tower.jpg)',
