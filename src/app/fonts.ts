@@ -6,7 +6,7 @@ import {
 } from 'next/font/google';
 export const inter = Cormorant_Infant({
 	subsets: ['latin'],
-	weight: ['400', '300', '500', '600'],
+	weight: '400',
 	style: 'normal',
 });
 
