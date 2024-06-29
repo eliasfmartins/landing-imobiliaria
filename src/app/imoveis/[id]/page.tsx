@@ -44,8 +44,8 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
         method: 'DELETE',
         credentials: 'include',
         headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${token}`,
+          'Content-Type': 'application/json',
+          'Authorization': `${token}`,
         }
       });
 
@@ -55,7 +55,7 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
       }
 
       router.push('/imoveis');
-    } catch (error : any) {
+    } catch (error: any) {
       console.error('Error deleting resource:', error);
     }
   };
@@ -92,10 +92,10 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
             key={index}
             src={img.startsWith('http') ? img : `/${img}`}
             alt={`Imagem ${index}`}
-			
+
             width={500}
             height={300}
-			className='min-w-[700px] min-h-[500px]'
+            className='min-w-[700px] min-h-[500px]'
           />
         ))}
       </Carousel>
@@ -115,15 +115,17 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
           >
             Deletar
           </button>
-          <button
-            onClick={()=>router.back()}
-            className="bg-gray-400 text-white p-2 rounded"
-          >
-            Voltar
-          </button>
+
 
         </div>
+
       )}
+      <button
+        onClick={() => router.back()}
+        className="bg-gray-400 text-white p-2 rounded"
+      >
+        Voltar
+      </button>
     </div>
   );
 };
