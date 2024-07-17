@@ -15,7 +15,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-multi-carousel": "^2.8.5"
+    "react-multi-carousel": "^2.8.5",
+    "swiper": "^11.1.5"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
