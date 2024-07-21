@@ -1,4 +1,4 @@
-import { playfair, robotinho } from '@/app/fonts';
+import { playfair } from '@/app/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
