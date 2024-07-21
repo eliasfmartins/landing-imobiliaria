@@ -105,7 +105,7 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 						<p className="text-2xl text-green-600 font-semibold">R$ {imovel.value}</p>
 					</div>
 					<div className="mb-4">
-						<p className="text-lg"><strong>Condomínio:</strong> {imovel.condominium}</p>
+						<p className="text-lg"><strong>Condomínio:</strong> R$ {imovel.condominium} Reais</p>
 						<p className="text-lg"><strong>IPTU:</strong>Não informado</p>
 					</div>
 					<div className="mb-4">
