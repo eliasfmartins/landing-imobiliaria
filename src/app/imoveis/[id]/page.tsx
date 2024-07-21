@@ -24,9 +24,9 @@ type Imovel = {
 	bathrooms: string;
 	garages: string;
 	area: string;
-	condoFee: string;
+	condominium: string;
 	propertyTax: string;
-	phone: string;
+	phone?: string;
 };
 
 const ImovelDetails = ({ params }: { params: { id: string } }) => {
@@ -105,18 +105,20 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 						<p className="text-2xl text-green-600 font-semibold">R$ {imovel.value}</p>
 					</div>
 					<div className="mb-4">
-						<p className="text-lg"><strong>Condomínio:</strong> {imovel.condoFee}</p>
-						<p className="text-lg"><strong>IPTU:</strong> {imovel.propertyTax}</p>
+						<p className="text-lg"><strong>Condomínio:</strong> {imovel.condominium}</p>
+						<p className="text-lg"><strong>IPTU:</strong>Não informado</p>
 					</div>
 					<div className="mb-4">
-						<p className="text-lg"><strong>Quartos:</strong> {imovel.rooms}</p>
-						<p className="text-lg"><strong>Banheiros:</strong> {imovel.bathrooms}</p>
-						<p className="text-lg"><strong>Garagens:</strong> {imovel.garages}</p>
-						<p className="text-lg"><strong>Área:</strong> {imovel.area}</p>
+					<p className="text-lg">
+  <strong>Quartos:</strong> {Number(imovel.rooms) < 10 ? `0${imovel.rooms}` : imovel.rooms}
+</p>
+						<p className="text-lg"><strong>Banheiros:</strong> {Number(imovel.bathrooms) < 10 ? `0${imovel.bathrooms}` : imovel.bathrooms}</p>
+						<p className="text-lg"><strong>Garagens:</strong> {Number(imovel.garages) < 10 ? `0${imovel.garages}` : imovel.garages} carros</p>
+						<p className="text-lg"><strong>Área:</strong> {imovel.area} m²</p>
 						<p className="text-lg"><strong>Cidade:</strong> {imovel.city}</p>
 					</div>
 					<div className="mb-4">
-						<p className="text-lg"><strong>Contato:</strong> {imovel.phone}</p>
+						<p className="text-lg"><strong>Contato:</strong> {imovel.phone?imovel.phone:'61 99101 - 0404'}</p>
 					</div>
 					{isAuthenticated && (
 						<div className="flex flex-col gap-4 mb-4 w-full">
