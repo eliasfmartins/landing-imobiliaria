@@ -4,7 +4,7 @@ import { inter } from './fonts';
 import { AuthProvider } from './context/AuthContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-
+import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
 	title: 'Imobiliaria Martins & Silva',
 	description: 'sua nova escolha para encontrar o lar dos seus sonhos',
@@ -23,6 +23,7 @@ export default function RootLayout({
 					{children}
 					<Footer />
 				</body>
+				<Analytics/>
 			</AuthProvider>
 		</html>
 	);
