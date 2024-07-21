@@ -160,25 +160,33 @@ export const Header = () => {
 				</div>
 			</header>
 			{showLoginModal && (
-				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-					<div className="bg-gray-700 p-8 rounded shadow-lg">
-						<h2 className="text-2xl mb-4 text-white">Login</h2>
-						<div className=" gap-3 flex items-center justify-center">
-							<Link href="/auth" onClick={closeModal}>
-								<button className="bg-blue-500 text-white px-3 py-3 rounded">
-									Ir para página de login
-								</button>
-							</Link>
-							<button
-								onClick={closeModal}
-								className=" bg-red-500 text-white px-4 py-3 rounded"
-							>
-								Cancelar
-							</button>
-						</div>
-					</div>
-				</div>
-			)}
+	<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+		<div className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-transform duration-300 scale-95 hover:scale-100">
+			<button
+				className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors"
+				onClick={closeModal}
+				aria-label="Fechar"
+			>
+				<FaWindowClose size={20} />
+			</button>
+			<h2 className="text-2xl font-semibold mb-6 text-white">Login</h2>
+			<div className="flex flex-col gap-4">
+				<Link href="/auth" onClick={closeModal}>
+					<button className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition-colors">
+						Ir para página de login
+					</button>
+				</Link>
+				<button
+					onClick={closeModal}
+					className="bg-red-600 text-white px-4 py-2 rounded-lg shadow hover:bg-red-700 transition-colors"
+				>
+					Cancelar
+				</button>
+			</div>
+		</div>
+	</div>
+)}
+
 		</>
 	);
 };

@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie'; // Alteração aqui
-
+import Cookies from 'js-cookie';
+import { FaExclamationCircle } from 'react-icons/fa';
 
 interface LoginResponse {
 	success: boolean;
@@ -16,13 +16,9 @@ export default function LoginPage() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState<string | null>(null);
-	const [messageType, setMessageType] = useState<'success' | 'error' | null>(
-		null
-	);
+	const [messageType, setMessageType] = useState<'success' | 'error' | null>(null);
 	const [loading, setLoading] = useState(false);
-	const [redirectTimeout, setRedirectTimeout] = useState<NodeJS.Timeout | null>(
-		null
-	);
+	const [redirectTimeout, setRedirectTimeout] = useState<NodeJS.Timeout | null>(null);
 	const router = useRouter();
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,11 +43,11 @@ export default function LoginPage() {
 			const data: LoginResponse = await response.json();
 
 			if (data.success && data.token) {
-				Cookies.set('token', data.token, { // Alteração aqui
+				Cookies.set('token', data.token, {
 					httpOnly: false,
-					expires: 1, // Alteração aqui (valor em dias)
+					expires: 1,
 					path: '/imoveis',
-					secure: false
+					secure: false,
 				});
 
 				login(data.token);
@@ -83,56 +79,58 @@ export default function LoginPage() {
 	}, [redirectTimeout]);
 
 	return (
-		<div>
-			<div className="min-h-screen bg-gray-900 flex items-center justify-center ">
-				<form
-					onSubmit={handleSubmit}
-					className="bg-gray-800 p-6 rounded shadow-md w-full max-w-sm"
-				>
-					<h1 className="text-2xl font-semibold mb-4 text-white">Login</h1>
-					{message && (
-						<div
-							className={`p-2 mb-4 text-white ${messageType === 'success' ? 'bg-green-500' : 'bg-red-500'
-								}`}
-						>
-							{message}
-						</div>
-					)}
-					<div className="mb-4">
-						<label htmlFor="email" className="block text-gray-300">
-							Email
-						</label>
-						<input
-							type="email"
-							id="email"
-							className="w-full p-2 border border-gray-600 rounded mt-1 bg-gray-700 text-white"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							required
-						/>
-					</div>
-					<div className="mb-4">
-						<label htmlFor="password" className="block text-gray-300">
-							Password
-						</label>
-						<input
-							type="password"
-							id="password"
-							className="w-full p-2 border border-gray-600 rounded mt-1 bg-gray-700 text-white"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							required
-						/>
-					</div>
-					<button
-						type="submit"
-						className="w-full bg-blue-500 text-white py-2 rounded mt-4"
-						disabled={loading}
+		<div className="min-h-screen bg-gray-900 flex items-center justify-center">
+			<form
+				onSubmit={handleSubmit}
+				className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
+			>
+				<h1 className="text-3xl font-bold mb-6 text-white text-center">Login</h1>
+				{message && (
+					<div
+						className={`p-4 mb-4 rounded-lg flex items-center justify-between ${
+							messageType === 'success' ? 'bg-green-600' : 'bg-red-600'
+						}`}
 					>
-						{loading ? 'Logging in...' : 'Login'}
-					</button>
-				</form>
-			</div>
+						<span className="text-white flex items-center gap-2">
+							<FaExclamationCircle size={20} />
+							{message}
+						</span>
+					</div>
+				)}
+				<div className="mb-6">
+					<label htmlFor="email" className="block text-gray-300 text-sm font-medium">
+						Email
+					</label>
+					<input
+						type="email"
+						id="email"
+						className="w-full p-3 border border-gray-600 rounded-lg mt-1 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+					/>
+				</div>
+				<div className="mb-6">
+					<label htmlFor="password" className="block text-gray-300 text-sm font-medium">
+						Password
+					</label>
+					<input
+						type="password"
+						id="password"
+						className="w-full p-3 border border-gray-600 rounded-lg mt-1 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						required
+					/>
+				</div>
+				<button
+					type="submit"
+					className="w-full bg-blue-600 text-white py-3 rounded-lg mt-4 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+					disabled={loading}
+				>
+					{loading ? 'Logging in...' : 'Login'}
+				</button>
+			</form>
 		</div>
 	);
 }

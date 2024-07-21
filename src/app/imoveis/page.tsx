@@ -11,26 +11,30 @@ const ImoveisPage = () => {
 		minValue: '',
 		maxValue: '',
 	});
+	const [totalImoveis, setTotalImoveis] = useState<number>(0);
 
 	useEffect(() => {
-		fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis`)
-			.then((response) => response.json())
-			.then((data) => setImoveis(data.data));
+		const fetchImoveis = async () => {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis`);
+			const data = await response.json();
+			setImoveis(data.data);
+			setTotalImoveis(data.data.length); // Atualiza o total de imóveis
+		};
+
+		fetchImoveis();
 	}, []);
 
 	const handleSearch = async () => {
-		const response = await fetch(
-			`${process.env.NEXT_PUBLIC_API_URL}imoveis/search`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(searchParams),
-			}
-		);
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/search`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(searchParams),
+		});
 		const data = await response.json();
 		setImoveis(data.data);
+		setTotalImoveis(data.data.length); // Atualiza o total de imóveis após a busca
 	};
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,49 +43,29 @@ const ImoveisPage = () => {
 	};
 
 	return (
-		<div className="container mx-auto pt-6 min-h-[100vh]">
-			<h1 className="text-2xl font-bold mb-4">Listagem de Imóveis</h1>
-			<div className="mb-4">
+		<div className="container mx-auto pt-6 min-h-screen">
+			<h1 className="text-3xl font-bold mb-6 text-gray-800">Listagem de Imóveis</h1>
+			
+			<div className="mb-6 flex flex-col gap-4 md:flex-row md:gap-4">
 				<input
 					type="text"
 					name="title"
 					placeholder="Título"
 					value={searchParams.title}
 					onChange={handleInputChange}
-					className="border p-2 mr-2"
+					className="border border-gray-300 p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
 				/>
-				<input
-					type="text"
-					name="rooms"
-					placeholder="Quartos"
-					value={searchParams.rooms}
-					onChange={handleInputChange}
-					className="border p-2 mr-2"
-				/>
-				{/* <input
-					type="text"
-					name="minValue"
-					placeholder="Valor Mínimo"
-					value={searchParams.minValue}
-					onChange={handleInputChange}
-					className="border p-2 mr-2"
-				/>
-				<input
-					type="text"
-					name="maxValue"
-					placeholder="Valor Máximo"
-					value={searchParams.maxValue}
-					onChange={handleInputChange}
-					className="border p-2 mr-2"
-				/> */}
 				<button
 					onClick={handleSearch}
-					className="bg-blue-500 text-white p-2 rounded"
+					className="bg-blue-500 text-white p-3 rounded-lg shadow-md hover:bg-blue-600 transition"
 				>
 					Buscar
 				</button>
 			</div>
-			<div className="flex justify-center items-center flex-wrap gap-4">
+
+			<p className="text-gray-700 mb-4">Total de imóveis: <span className="font-bold">{totalImoveis}</span></p>
+
+			<div className="flex flex-wrap justify-center gap-6">
 				{imoveis.map((imovel) => (
 					<CardImoveis
 						key={imovel.id}
