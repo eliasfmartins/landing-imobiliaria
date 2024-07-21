@@ -109,16 +109,22 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 						<p className="text-lg"><strong>IPTU:</strong>Não informado</p>
 					</div>
 					<div className="mb-4">
-					<p className="text-lg">
-  <strong>Quartos:</strong> {Number(imovel.rooms) < 10 ? `0${imovel.rooms}` : imovel.rooms}
-</p>
-						<p className="text-lg"><strong>Banheiros:</strong> {Number(imovel.bathrooms) < 10 ? `0${imovel.bathrooms}` : imovel.bathrooms}</p>
-						<p className="text-lg"><strong>Garagens:</strong> {Number(imovel.garages) < 10 ? `0${imovel.garages}` : imovel.garages} carros</p>
+
+						<p className="text-lg">
+							<strong>Quartos:</strong> {String(imovel.rooms).padStart(2, '0')} quartos
+						</p>
+
+						<p className="text-lg">
+							<strong>Banheiros:</strong> {String(imovel.bathrooms).padStart(2, '0')} Banheiros
+						</p>
+						<p className="text-lg">
+							<strong>Garagens:</strong> {String(imovel.garages).padStart(2, '0')} carros
+						</p>
 						<p className="text-lg"><strong>Área:</strong> {imovel.area} m²</p>
 						<p className="text-lg"><strong>Cidade:</strong> {imovel.city}</p>
 					</div>
 					<div className="mb-4">
-						<p className="text-lg"><strong>Contato:</strong> {imovel.phone?imovel.phone:'61 99101 - 0404'}</p>
+						<p className="text-lg"><strong>Contato:</strong> {imovel.phone ? imovel.phone : '61 99101 - 0404'}</p>
 					</div>
 					{isAuthenticated && (
 						<div className="flex flex-col gap-4 mb-4 w-full">
