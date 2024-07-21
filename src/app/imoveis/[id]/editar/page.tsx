@@ -15,7 +15,10 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
     city: '',
     bathrooms: '',
     garages: '',
-    area: ''
+    area: '',
+    phone: '',
+    condominium: '',
+    highlight: false,
   });
 
   const [imageUrl, setImageUrl] = useState('');
@@ -29,9 +32,19 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
     }
   }, [id]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setImovel(prevImovel => ({ ...prevImovel, [name]: value }));
+	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      setImovel(prevImovel => ({
+        ...prevImovel,
+        [name]: (e.target as HTMLInputElement).checked
+      }));
+    } else {
+      setImovel(prevImovel => ({
+        ...prevImovel,
+        [name]: value
+      }));
+    }
   };
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -60,6 +73,7 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
     e.preventDefault();
     const cookies = parseCookies();
     const token = cookies.token;
+    console.log(imovel);
     await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/${id}`, {
       method: 'PATCH',
       credentials: 'include',
@@ -69,72 +83,45 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
       },
       body: JSON.stringify(imovel)
     })
-    .then(response => response.json())
-    .then(() => router.push(`/imoveis/${id}`))
-    .catch(error => console.error("Erro ao atualizar o imóvel:", error));
+      .then(response => response.json())
+      .then(() => router.push(`/imoveis/${id}`))
+      .catch(error => console.error("Erro ao atualizar o imóvel:", error));
   };
 
-  return (
+	return (
     <div className="container mx-auto p-6 bg-gray-50 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Editar Imóvel</h1>
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            name="title"
-            value={imovel.title}
-            onChange={handleChange}
-            placeholder="Título"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="rooms"
-            value={imovel.rooms}
-            onChange={handleChange}
-            placeholder="Quartos"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="value"
-            value={imovel.value}
-            onChange={handleChange}
-            placeholder="Valor"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            name="city"
-            value={imovel.city}
-            onChange={handleChange}
-            placeholder="Cidade"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="bathrooms"
-            value={imovel.bathrooms}
-            onChange={handleChange}
-            placeholder="Banheiros"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="garages"
-            value={imovel.garages}
-            onChange={handleChange}
-            placeholder="Vagas"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="area"
-            value={imovel.area}
-            onChange={handleChange}
-            placeholder="Metragem"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          {[
+            { name: 'title', type: 'text', placeholder: 'Título' },
+            { name: 'rooms', type: 'number', placeholder: 'Quartos' },
+            { name: 'value', type: 'number', placeholder: 'Valor' },
+            { name: 'city', type: 'text', placeholder: 'Cidade' },
+            { name: 'bathrooms', type: 'number', placeholder: 'Banheiros' },
+            { name: 'garages', type: 'number', placeholder: 'Vagas' },
+            { name: 'area', type: 'number', placeholder: 'Metragem' },
+            { name: 'phone', type: 'text', placeholder: 'Telefone' },
+            { name: 'condominium', type: 'text', placeholder: 'Condomínio' }
+          ].map(({ name, type, placeholder }) => (
+            <div key={name} className="relative">
+              <input
+                type={type}
+                name={name}
+                value={(imovel as any)[name]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+              />
+              {((imovel as any)[name]) && (
+                <label
+                  className={`absolute left-3  text-gray-500 transition-all duration-200 ease-in-out text-xs -top-2.5 bg-white px-1`}
+                >
+                  {placeholder}
+                </label>
+              )}
+            </div>
+          ))}
         </div>
         <textarea
           name="description"
@@ -167,12 +154,24 @@ const EditarImovel = ({ params }: { params: { id: string } }) => {
             ))}
           </ul>
         </div>
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            name="highlight"
+            checked={imovel.highlight}
+            onChange={handleChange}
+            id="highlight"
+            className="mr-2"
+          />
+          <label htmlFor="highlight" className="text-gray-700">Destaque</label>
+        </div>
         <button type="submit" className="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
           Salvar
         </button>
       </form>
     </div>
   );
+
 };
 
 export default EditarImovel;

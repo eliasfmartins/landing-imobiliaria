@@ -42,7 +42,7 @@ export default function CardDestaqueImoveis({
         </p>
       </div>
       <div className="p-4 flex flex-col gap-2">
-        {title}
+			<h2 className="text-xl font-semibold mb-1 truncate capitalize">{title.toLocaleLowerCase()}</h2>
         <p>{cidade}</p>
         <div className="flex gap-2">
           {quartos && <p>{quartos} Quartos</p>}

@@ -14,15 +14,21 @@ const CriarImovel = () => {
     city: '',
     bathrooms: '',
     garages: '',
-    area: ''
+    area: '',
+    phone: '',
+    condominium: '',
+    highlight: false
   });
 
   const [imageUrl, setImageUrl] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setImovel({ ...imovel, [name]: value });
-  };
+  const { name, value, type, checked } = e.target as HTMLInputElement;
+  setImovel(prevImovel => ({
+    ...prevImovel,
+    [name]: type === 'checkbox' ? checked : value
+  }));
+};
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     setImageUrl(e.target.value);
@@ -30,17 +36,20 @@ const CriarImovel = () => {
 
   const handleImageKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && imageUrl.trim() !== '') {
-      setImovel({ ...imovel, images: [...imovel.images, imageUrl] });
+      setImovel(prevImovel => ({
+        ...prevImovel,
+        images: [...prevImovel.images, imageUrl]
+      }));
       setImageUrl('');
       e.preventDefault();
     }
   };
 
   const handleRemoveImage = (index: number) => {
-    setImovel({
-      ...imovel,
-      images: imovel.images.filter((_, i) => i !== index)
-    });
+    setImovel(prevImovel => ({
+      ...prevImovel,
+      images: prevImovel.images.filter((_, i) => i !== index)
+    }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -78,64 +87,37 @@ const CriarImovel = () => {
   return (
     <div className="container mx-auto p-6 bg-gray-50 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Criar Imóvel</h1>
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            name="title"
-            value={imovel.title}
-            onChange={handleChange}
-            placeholder="Título"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="rooms"
-            value={imovel.rooms}
-            onChange={handleChange}
-            placeholder="Quartos"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="value"
-            value={imovel.value}
-            onChange={handleChange}
-            placeholder="Valor"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            name="city"
-            value={imovel.city}
-            onChange={handleChange}
-            placeholder="Cidade"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="bathrooms"
-            value={imovel.bathrooms}
-            onChange={handleChange}
-            placeholder="Banheiros"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="garages"
-            value={imovel.garages}
-            onChange={handleChange}
-            placeholder="Vagas"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            name="area"
-            value={imovel.area}
-            onChange={handleChange}
-            placeholder="Metragem"
-            className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          {[
+            { name: 'title', type: 'text', placeholder: 'Título' },
+            { name: 'rooms', type: 'number', placeholder: 'Quartos' },
+            { name: 'value', type: 'number', placeholder: 'Valor' },
+            { name: 'city', type: 'text', placeholder: 'Cidade' },
+            { name: 'bathrooms', type: 'number', placeholder: 'Banheiros' },
+            { name: 'garages', type: 'number', placeholder: 'Vagas' },
+            { name: 'area', type: 'number', placeholder: 'Metragem' },
+            { name: 'phone', type: 'text', placeholder: 'Telefone' },
+            { name: 'condominium', type: 'text', placeholder: 'Condomínio' }
+          ].map(({ name, type, placeholder }) => (
+            <div key={name} className="relative">
+              <input
+                type={type}
+                name={name}
+                value={(imovel as any)[name]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+              />
+              {((imovel as any)[name]) && (
+                <label
+                  className={`absolute left-3 text-gray-500 transition-all duration-200 ease-in-out text-xs -top-2.5 bg-white px-1`}
+                >
+                  {placeholder}
+                </label>
+              )}
+            </div>
+          ))}
         </div>
         <textarea
           name="description"
@@ -167,6 +149,17 @@ const CriarImovel = () => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            name="highlight"
+            checked={imovel.highlight}
+            onChange={handleChange}
+            id="highlight"
+            className="mr-2"
+          />
+          <label htmlFor="highlight" className="text-gray-700">Destaque</label>
         </div>
         <button type="submit" className="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
           Criar

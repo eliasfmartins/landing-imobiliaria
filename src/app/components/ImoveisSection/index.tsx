@@ -1,24 +1,81 @@
-import React from 'react';
-import CardImoveis from '../CardImoveis';
+'use client';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import CardDestaqueImoveis from '../CardsDestaqueImoveis';
+import { ImovelParams } from '@/api/imoveis';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { A11y, Navigation, Pagination } from 'swiper/modules';
 
 export const ImoveisSection = () => {
-  return (
-    <div className=''>
-    <div className="flex sm:justify-evenly items-center w-full/20 flex-wrap p-4 justify-center gap-y-8  ">
-   
-      <CardDestaqueImoveis cidade='João Pinheiro' imgUrl='fazenda.jpeg' link='https://www.vivareal.com.br/imovel/fazenda---sitio-3-quartos-joao-pinheiro-com-garagem-250m2-venda-RS1600000-id-2690673376/' title='Excelente Fazenda em João Pinheiro' valor='1.600.000' banheiros='2' metragem='250' quartos='3' vagas='10' />
-      <CardDestaqueImoveis cidade='Jardim Ingá' imgUrl='casajardin.webp' link='https://www.vivareal.com.br/imovel/casa-3-quartos-jardim-do-inga-bairros-luziania-com-garagem-120m2-venda-RS380000-id-2689051197/' title='Ótima Casa no Jardim Ingá' valor='380.000' banheiros='2' metragem='120' quartos='3' vagas='2' />
-      <CardDestaqueImoveis imgUrl='casaimg.jpeg' cidade='Jardim Ingá' link='https://wa.me/p/7546592922067166/556191010404' title='Excelente casa no Jardim Ingá' valor='150.000' banheiros='1' quartos='2' vagas='2' />
-     
-    </div>
-     <Link
-     href="/imoveis"
-     className="border-2 border-yellow-600 w-fit px-8 py-3 font-[700] text-yellow-600 hover:bg-yellow-600 hover:text-white transition-all ease-in-out  rounded mx-auto flex my-14"
-   >
-     Veja Nossos Imoveis
-   </Link>
-   </div>
-  );
+	const [imoveis, setImoveis] = useState<ImovelParams[]>([]);
+
+	useEffect(() => {
+		const fetchImoveis = async () => {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}imoveis/highlighted`);
+			const data = await response.json();
+			setImoveis(data.data);
+		};
+
+		fetchImoveis();
+	}, []);
+
+	return (
+		<div className='mx-auto'>
+			<Swiper
+				spaceBetween={30}
+				pagination={{
+					clickable: true,
+				}}
+				breakpoints={{
+					// quando a largura da tela for menor ou igual a 1200px
+					1200: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					// quando a largura da tela for menor ou igual a 992px
+					992: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					// quando a largura da tela for menor ou igual a 768px
+					768: {
+						slidesPerView: 1,
+						spaceBetween: 15,
+					},
+					// quando a largura da tela for menor ou igual a 576px
+					576: {
+						slidesPerView: 1,
+						spaceBetween: 10,
+					},
+				}}
+				loop={true}
+				modules={[Pagination]}
+				className="mySwiper max-w-[1200px] w-auto flex justify-center items-center"
+			>
+				{imoveis.map(imovel => (
+					<SwiperSlide key={imovel.id} style={{ width: '350px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+						<CardDestaqueImoveis
+							imgUrl={imovel.images[0]}
+							cidade={imovel.city}
+							title={imovel.title}
+							valor={imovel.value}
+							banheiros={imovel.bathrooms}
+							metragem={imovel.area}
+							quartos={imovel.rooms}
+							vagas={imovel.garages}
+							link={`/imoveis/${imovel.id}`}
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+
+			<Link
+				href="/imoveis"
+				className="border-2 border-yellow-600 w-fit px-8 py-3 font-[700] text-yellow-600 hover:bg-yellow-600 hover:text-white transition-all ease-in-out rounded mx-auto flex my-14"
+			>
+				Veja Nossos Imóveis
+			</Link>
+		</div>
+	);
 };

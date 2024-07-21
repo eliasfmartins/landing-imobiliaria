@@ -11,10 +11,9 @@ export const inter = Cormorant_Infant({
 });
 
 export const playfair = Cormorant_Unicase({
-	subsets: ['latin'],
-	weight: ['300', '500', '700'],
+	subsets: ['latin'],weight:'400'
 });
 export const roboto = Cormorant_Infant({
 	subsets: ['latin'],
-	weight: ['300', '400', '500', '600', '700'],
+	weight: "400"
 });
