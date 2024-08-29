@@ -38,7 +38,14 @@ export default function CardImoveis({
 				</div>
 				<p className="absolute bottom-2 left-2 text-white ">
 					A partir de: <br />
-					<span className="text-xl">R$ {valor} </span>
+					<span className="text-xl">
+						{Number(valor).toLocaleString('pt-BR', {
+							style: 'currency',
+							currency: 'BRL',
+							minimumFractionDigits: 2,
+							maximumFractionDigits: 2,
+						})}
+					</span>
 				</p>
 			</div>
 			<div className="p-4 flex flex-col gap-2 ">

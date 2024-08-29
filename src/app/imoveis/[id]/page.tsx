@@ -102,7 +102,13 @@ const ImovelDetails = ({ params }: { params: { id: string } }) => {
 				<div className="w-full md:w-1/3 p-4 bg-gray-100 rounded-md shadow-inner">
 					<div className="mb-4">
 						<h1 className="text-3xl font-bold">{imovel.title}</h1>
-						<p className="text-2xl text-green-600 font-semibold">R$ {imovel.value}</p>
+						<p className="text-2xl text-green-600 font-semibold">
+							{Number(imovel.value).toLocaleString('pt-BR', {
+								style: 'currency',
+								currency: 'BRL',
+								minimumFractionDigits: 2,
+								maximumFractionDigits: 2,
+							})}</p>
 					</div>
 					<div className="mb-4">
 						<p className="text-lg"><strong>Condomínio:</strong> R$ {imovel.condominium} Reais</p>
