@@ -11,13 +11,13 @@ export const CorretoresSection = () => {
         phone="61991010404"
         imgSrc="perfilcarla2.jpeg"
       />
-      <CorretorCard
+      {/* <CorretorCard
         creci="14.643-GO"
         name="Jhone Silva"
         email="imobiliariamartinssilva@gmail.com"
         phone="61992299329"
         imgSrc="perfiljhon.jpeg"
-      />
+      /> */}
     </div>
   );
 };
