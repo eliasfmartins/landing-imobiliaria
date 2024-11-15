@@ -66,7 +66,7 @@ const ImoveisPage = () => {
 			<p className="text-gray-700 mb-4">Total de imóveis: <span className="font-bold">{totalImoveis}</span></p>
 
 			<div className="flex flex-wrap justify-center gap-6">
-				{imoveis.map((imovel) => (
+				{imoveis.length > 0 && imoveis && imoveis.map((imovel) => (
 					<CardImoveis
 						key={imovel.id}
 						title={imovel.title}

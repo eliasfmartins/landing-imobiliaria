@@ -53,7 +53,7 @@ export const ImoveisSection = () => {
 				modules={[Pagination]}
 				className="mySwiper max-w-[1200px] w-auto flex justify-center items-center"
 			>
-				{imoveis.map(imovel => (
+				{imoveis.length > 0 && imoveis && imoveis.map(imovel => (
 					<SwiperSlide key={imovel.id} style={{ width: '350px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
 						<CardDestaqueImoveis
 							imgUrl={imovel.images[0]}
