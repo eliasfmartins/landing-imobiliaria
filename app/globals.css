@@ -528,11 +528,11 @@ main {
 }
 
 .bg-gradient-section {
-  background: linear-gradient(to br, #f8fafc, #fef3c7);
+  background: linear-gradient(to bottom right, #f8fafc, #fef3c7);
 }
 
 .dark .bg-gradient-section {
-  background: linear-gradient(to br, hsl(var(--background)), hsl(var(--muted)));
+  background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--muted)));
 }
 
 /* Melhorias específicas para SearchForm */

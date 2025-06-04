@@ -20,7 +20,6 @@ const fontSans = Montserrat({
 export const metadata: Metadata = {
   title: "Martins&Silva Imobiliária | Imóveis de Luxo",
   description: "Encontre o imóvel dos seus sonhos com a Martins&Silva - Especialistas em imóveis de alto padrão",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
