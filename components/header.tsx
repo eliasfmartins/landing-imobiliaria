@@ -69,7 +69,7 @@ export function Header() {
                 <span className="text-[#9A7D0A]">&</span>
                 <span>Silva</span>
               </motion.span>
-              <span className="text-xs text-muted-foreground tracking-widest uppercase">Imobiliária de Luxo</span>
+              <span className="text-xs text-muted-foreground tracking-widest uppercase">Imobiliária</span>
             </div>
           </Link>
 
